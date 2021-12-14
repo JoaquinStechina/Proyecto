@@ -16,7 +16,6 @@ class Menu_Nueva_Partida : public Escena {
 	Fondo fondo;
 	Clock reloj;
 	Opcion_de_menu opc1;
-	//Sprites caja1;
 public:
 	Menu_Nueva_Partida();
 	void Actualizar (RenderWindow & ventana, Juego & j);
