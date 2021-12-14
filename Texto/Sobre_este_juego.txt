@@ -1,0 +1,6 @@
+Descripcion:
+Este juego se realizo como proyecto final de catedra de Programacion Orientada a Objetos de la
+Carrera de Ingenieria en Informatica en la Facultad de Ingenieria y Ciencias Hidricas.
+Controles:
+Para el movimiento se utilizan las flechas del teclado y la barra espaciadora y el boton de
+escape para aceptar o retroceder respectivamente.
