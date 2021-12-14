@@ -1,0 +1,30 @@
+#ifndef MENU_PRINCIPAL_H
+#define MENU_PRINCIPAL_H
+#include "Escena.h"
+#include <SFML/Graphics.hpp>
+#include "Sprite_de_personaje.h"
+#include "Fondo.h"
+#include "Opcion_de_menu.h"
+#include "Selector_de_menu.h"
+#include "Juego.h"
+#include <SFML/Audio.hpp>
+using namespace std;
+
+class Menu_Principal : public Escena{
+	SoundBuffer sb_buffer;
+	Sound s_sonido_enter;
+	int cont_pos;
+	Clock reloj;
+	Fondo fondo_menu_principal;
+	Opcion_de_menu Opcion1;
+	Opcion_de_menu Opcion2;
+	Opcion_de_menu Opcion3;
+	Selector_de_menu Selector1;
+public:
+	Menu_Principal();
+	void Actualizar(RenderWindow &ventana, Juego &j) override;
+	void Dibujar(RenderWindow &ventana) override;
+};
+
+#endif
+
