@@ -31,13 +31,13 @@ path=Nodos.cpp
 cursor=0:0
 [source]
 path=Filas_De_Nodos.cpp
-cursor=0:0
+cursor=18:37
 [source]
 path=Fondo.cpp
 cursor=0:0
 [source]
 path=Menu_mapa.cpp
-cursor=0:0
+cursor=5:20
 [source]
 path=Menu_Nueva_Partida.cpp
 cursor=0:0
@@ -46,10 +46,10 @@ path=Menu_Nuevo_Juego.cpp
 cursor=0:0
 [source]
 path=Menu_Principal.cpp
-cursor=0:0
+cursor=7:1
 [source]
 path=Menu_Sobre_este_juego.cpp
-cursor=0:0
+cursor=26:20
 [source]
 path=NPC.cpp
 cursor=0:0
@@ -58,7 +58,7 @@ path=Obj_Stats.cpp
 cursor=0:0
 [source]
 path=Opcion_de_menu.cpp
-cursor=0:0
+cursor=27:47
 [source]
 path=PJs.cpp
 cursor=0:0
@@ -67,7 +67,7 @@ path=Player.cpp
 cursor=0:0
 [source]
 path=Selector_De_Mapa.cpp
-cursor=0:0
+cursor=69:24
 [source]
 path=Selector_de_menu.cpp
 cursor=0:0
@@ -97,7 +97,7 @@ path=Fondo.h
 cursor=0:0
 [header]
 path=Menu_mapa.h
-cursor=7:29
+cursor=17:27
 [header]
 path=Menu_Nueva_Partida.h
 cursor=0:0
@@ -106,10 +106,10 @@ path=Menu_Nuevo_Juego.h
 cursor=0:0
 [header]
 path=Menu_Principal.h
-cursor=0:0
+cursor=15:14
 [header]
 path=Menu_Sobre_este_juego.h
-cursor=0:0
+cursor=6:20
 [header]
 path=NPC.h
 cursor=0:0
@@ -127,7 +127,7 @@ path=Player.h
 cursor=0:0
 [header]
 path=Selector_De_Mapa.h
-cursor=0:0
+cursor=5:21
 [header]
 path=Selector_de_menu.h
 cursor=0:0
