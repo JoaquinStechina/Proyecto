@@ -3,9 +3,12 @@
 #include "Sprites.h"
 #include <list>
 #include "Filas_De_Nodos.h"
+#include <SFML/Audio.hpp>
 using namespace std;
 
 class Selector_De_Mapa : public Sprites{
+	SoundBuffer sb_buffer_move;
+	Sound s_sonido_move;
 	Clock reloj;
 	int fila_actual;
 public:

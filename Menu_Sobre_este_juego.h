@@ -4,8 +4,11 @@
 #include "Fondo.h"
 #include <SFML/Graphics.hpp>
 #include "Juego.h"
+#include <SFML/Audio.hpp>
 
 class Menu_Sobre_este_juego : public Escena {
+	SoundBuffer sb_enter;
+	Sound soni_enter;
 	Fondo fondo_sobre_este_juego;
 	Font fuente;
 	Text texto_sobre_este_juego;

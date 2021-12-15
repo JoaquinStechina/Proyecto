@@ -4,9 +4,8 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-using namespace sf;
 
-Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"){
+Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Nivel 1", 40){
 	
 	//Hago un fondo gris para el mapa;
 	Fondo_Base.setSize(Vector2f(1000.f,400.f));
@@ -42,16 +41,6 @@ Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"){
 			cant_nodos_totales = cant_nodos_totales + x.Ver_Cantidad_Nodos();
 		}
 	}
-	cout << "nodos totales: " << cant_nodos_totales << endl;
-	
-	for(Filas_De_Nodos x : V_Filas) { 
-		x.Ver_Valor_Nodos();
-	}
-	//	Esto muestra cuantos nodos hay en total y el numero que valen en consola, era para ver como funcionaba nomas;
-	//	cout << "nodos totales: " << cant_nodos_totales << endl; 
-	//	for(Filas_De_Nodos x : V_Filas) {     
-	//		x.Ver_Valor_Nodos();
-	//	}
 	
 	//Posiciono los nodos;
 	int cont = 0;
@@ -70,12 +59,20 @@ Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"){
 	columna_actual_flecha = 2;
 	selec_mapa.Cambiar_Pos((((1000.f/(V_Filas.size()+1))*(columna_actual_flecha))+50), 300.f);
 	
+	//Sonidos;
+	sb_buffer_enter.loadFromFile( "Sonidos/Menu_select.wav" );
+	s_sonido_enter.setBuffer(sb_buffer_enter);
+	
+	//Titulo
+	titulo.Cambiar_Escala_Opcion_Menu(1.2);
+	titulo.Cambiar_Pos_Opcion_Menu(600,40);
+	titulo.Cambiar_Pos_Cuadro_Menu(600,50);
 }
-
 
 void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 	if (Keyboard::isKeyPressed(Keyboard::Escape)){
 		j.Cambiar_Escena(new Menu_Principal);
+		s_sonido_enter.play();
 	}
 	selec_mapa.Actualizar(ventana, V_Filas,columna_actual_flecha);
 }
@@ -87,5 +84,6 @@ void Menu_mapa::Dibujar (RenderWindow & ventana) {
 		x.Dibujar(ventana);
 	}
 	selec_mapa.Dibujar(ventana);
+	titulo.Dibujar(ventana);
 }
 

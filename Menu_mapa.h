@@ -6,9 +6,14 @@
 #include "Filas_De_Nodos.h"
 #include <list>
 #include "Selector_De_Mapa.h"
+#include <SFML/Audio.hpp>
+#include "Opcion_de_menu.h"
 using namespace std;
 
 class Menu_mapa : public Escena {
+	Opcion_de_menu titulo;
+	SoundBuffer sb_buffer_enter;
+	Sound s_sonido_enter;
 	int columna_actual_flecha;
 	RectangleShape Fondo_Base;
 	Fondo Fondo_juego;

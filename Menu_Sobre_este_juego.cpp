@@ -14,12 +14,17 @@ Menu_Sobre_este_juego::Menu_Sobre_este_juego() : fondo_sobre_este_juego("Imagene
 	rect_fondo.setOrigin(Vector2f(500.f,250.f));
 	rect_fondo.setFillColor(Color(255,255,255,128));
 	rect_fondo.setPosition(600.f,300.f);
+	
+	//Sonido;
+	sb_enter.loadFromFile("Sonidos/Menu_select.wav");
+	soni_enter.setBuffer(sb_enter);
 }
 
 
 void Menu_Sobre_este_juego::Actualizar (RenderWindow & ventana, Juego &j) {
 	if (Keyboard::isKeyPressed(Keyboard::Escape)){
 		j.Cambiar_Escena(new Menu_Principal);
+		soni_enter.play();
 	}
 	
 }

@@ -9,6 +9,10 @@ Selector_De_Mapa::Selector_De_Mapa() {
 	s_sprite.setOrigin(25,25);
 	reloj.restart();
 	fila_actual=1;
+	
+	//sonido;
+	sb_buffer_move.loadFromFile( "Sonidos/Menu_move.wav" );
+	s_sonido_move.setBuffer(sb_buffer_move);
 }
 
 
@@ -37,6 +41,7 @@ void Selector_De_Mapa::Actualizar (RenderWindow & ventana, list<Filas_De_Nodos> 
 			if(fila_actual > cantidad_nodos_enColumnaActual){
 				fila_actual=1;
 			}
+			s_sonido_move.play();
 			reloj.restart();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Up)){
@@ -44,6 +49,7 @@ void Selector_De_Mapa::Actualizar (RenderWindow & ventana, list<Filas_De_Nodos> 
 			if (fila_actual<1){
 				fila_actual=cantidad_nodos_enColumnaActual;
 			}
+			s_sonido_move.play();
 			reloj.restart();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Right)){
@@ -52,6 +58,7 @@ void Selector_De_Mapa::Actualizar (RenderWindow & ventana, list<Filas_De_Nodos> 
 			if( columna_actual > lista_filas.size() ){
 				columna_actual=2;
 			}
+			s_sonido_move.play();
 			reloj.restart();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Left)){
@@ -60,6 +67,7 @@ void Selector_De_Mapa::Actualizar (RenderWindow & ventana, list<Filas_De_Nodos> 
 			if( columna_actual < 2 ){
 				columna_actual=lista_filas.size();
 			}
+			s_sonido_move.play();
 			reloj.restart();
 		}
 	}
