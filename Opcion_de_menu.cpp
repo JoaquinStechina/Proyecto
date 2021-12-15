@@ -12,6 +12,7 @@ Opcion_de_menu::Opcion_de_menu(std::string t_de_menu, int Tamanio_texto) {
 	s_sprite.setTexture(t_de_sprite);
 	r_rect = s_sprite.getLocalBounds();
 	s_sprite.setOrigin(r_rect.width/2, r_rect.height/2);
+	t_de_sprite.setSmooth(true);
 }
 
 
