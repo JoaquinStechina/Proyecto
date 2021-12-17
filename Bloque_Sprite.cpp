@@ -1,9 +1,24 @@
 #include "Bloque_Sprite.h"
 
 Bloque_Sprite::Bloque_Sprite(std::string nombre_textura) {
+	t_de_sprite.loadFromFile(nombre_textura);
+	t_de_sprite.setSmooth(true);
+	s_sprite.setTexture(t_de_sprite);
 }
-Bloque_Sprite::Bloque_Sprite(std::string nombre_textura, FloatRect _texto, std::string texto) {
-	
+//Bloque_Sprite(std::string nombre_textura, FloatRect bloque, FloatRect bloque_texto, std::string texto) {
+//	
+//}
+
+void Bloque_Sprite::cambiar_posicion_bloque (const float & x, const float & y) {
+	s_sprite.setPosition(x,y);
+}
+
+void Bloque_Sprite::cambiar_escala_bloque (const float & x) {
+	s_sprite.setScale(x,x);
+}
+
+void Bloque_Sprite::cambiar_escala_bloque (const float & x, const float & y) {
+	s_sprite.setScale(x,y);
 }
 
 void Bloque_Sprite::repetir_bloque (bool &a) {

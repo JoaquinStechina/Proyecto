@@ -40,7 +40,7 @@ path=Menu_mapa.cpp
 cursor=5:20
 [source]
 path=Menu_Nueva_Partida.cpp
-cursor=0:0
+cursor=7:33
 [source]
 path=Menu_Nuevo_Juego.cpp
 cursor=0:0
@@ -58,7 +58,7 @@ path=Obj_Stats.cpp
 cursor=0:0
 [source]
 path=Opcion_de_menu.cpp
-cursor=27:47
+cursor=28:1
 [source]
 path=PJs.cpp
 cursor=0:0
@@ -82,7 +82,7 @@ path=Stats.cpp
 cursor=0:0
 [source]
 path=Bloque_Sprite.cpp
-cursor=0:0
+cursor=4:29
 [header]
 path=Juego.h
 cursor=0:0
@@ -103,7 +103,7 @@ path=Menu_mapa.h
 cursor=13:10
 [header]
 path=Menu_Nueva_Partida.h
-cursor=0:0
+cursor=17:22
 [header]
 path=Menu_Nuevo_Juego.h
 cursor=0:0
@@ -145,7 +145,7 @@ path=Stats.h
 cursor=0:0
 [header]
 path=Bloque_Sprite.h
-cursor=0:0
+cursor=24:0
 [other]
 path=Leeme.txt
 cursor=4:447

@@ -8,10 +8,15 @@
 #include "Juego.h"
 #include <SFML/Audio.hpp>
 #include "Sprites.h"
+#include "Bloque_Sprite.h"
+#include <SFML/Graphics/Rect.hpp>
+
+using namespace sf;
 
 class Menu_Nueva_Partida : public Escena {
 	SoundBuffer sb_buffer;
 	Sound s_sonido_enter;
+	Bloque_Sprite Menu;
 	int cont_pos;
 	Fondo fondo;
 	Clock reloj;
