@@ -12,4 +12,3 @@ int main(int argc, char *argv[]){
 	Proyecto.Jugar();
 	return 0;
 }
-

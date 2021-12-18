@@ -11,14 +11,27 @@
 using namespace std;
 
 class Menu_mapa : public Escena {
-	Opcion_de_menu titulo;
+	//Barra de vida;
+	Texture bar_vacia;
+	Texture hpbar;
+	Texture manabar;
+	Texture bar_level;
+	
+	//Sonidos
 	SoundBuffer sb_buffer_enter;
 	Sound s_sonido_enter;
-	int columna_actual_flecha;
+	
+	//Fondo
 	RectangleShape Fondo_Base;
 	Fondo Fondo_juego;
+	Opcion_de_menu titulo;
+	
+	//Selector y filas
 	list<Filas_De_Nodos> V_Filas;
 	Selector_De_Mapa selec_mapa;
+	int columna_actual_flecha;
+	
+	//Iconos del mapa
 	Texture t_campfire;
 	Texture t_mercado;
 	Texture t_start;
