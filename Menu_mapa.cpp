@@ -20,6 +20,14 @@ Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 
 	t_encuentro.loadFromFile("Imagenes/Sprites/Encuentro.png");
 	t_start.loadFromFile("Imagenes/Sprites/Start.png");
 	t_boss.loadFromFile("Imagenes/Sprites/Boss.png");
+	bar_vacia.loadFromFile("Imagenes/HP_Bar/backplate.png");
+	bar_vacia.setSmooth(true);
+	hpbar.loadFromFile("Imagenes/HP_Bar/left_bar.png");
+	hpbar.setSmooth(true);
+	manabar.loadFromFile("Imagenes/HP_Bar/right_bar.png");
+	manabar.setSmooth(true);
+	bar_level.loadFromFile("Imagenes/HP_Bar/mid_top.png");
+	bar_level.setSmooth(true);
 	
 	//Creo la fila inicial, final, y las aleatorias del medio y las meto en un vector de filas;
 	int cant_nodos_totales = 0;
@@ -67,6 +75,23 @@ Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 
 	titulo.Cambiar_Escala_Opcion_Menu(1.2);
 	titulo.Cambiar_Pos_Opcion_Menu(600,40);
 	titulo.Cambiar_Pos_Cuadro_Menu(600,50);
+	
+	//Barra de vida
+	s_empty_bar.setTexture(bar_vacia);
+	s_empty_bar.setPosition(387.75,493.5);
+	s_empty_bar.setScale(0.5,0.5);
+	s_hp_bar.setTexture(hpbar);
+	s_hp_bar.setTextureRect(IntRect(0, 0, 424*0.9, 227));
+	s_hp_bar.setPosition(387.75,492.5);
+	s_hp_bar.setScale(0.5,0.5);
+	s_mana_bar.setTexture(manabar);
+	s_mana_bar.setScale(0.5,0.5);
+	s_mana_bar.setOrigin(424.5,0);
+	s_mana_bar.setTextureRect(IntRect(424+((1-0.9)*424), 0, 424, 227));
+	s_mana_bar.setPosition(811.75+((1-0.9)*212),492.5);
+	s_bar_lvl.setTexture(bar_level);
+	s_bar_lvl.setPosition(387.75,493);
+	s_bar_lvl.setScale(0.5,0.5);
 }
 
 void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
@@ -85,5 +110,9 @@ void Menu_mapa::Dibujar (RenderWindow & ventana) {
 	}
 	selec_mapa.Dibujar(ventana);
 	titulo.Dibujar(ventana);
+	ventana.draw(s_empty_bar);
+	ventana.draw(s_hp_bar);
+	ventana.draw(s_mana_bar);
+	ventana.draw(s_bar_lvl);
 }
 

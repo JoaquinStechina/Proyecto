@@ -12,10 +12,8 @@ using namespace std;
 
 class Menu_mapa : public Escena {
 	//Barra de vida;
-	Texture bar_vacia;
-	Texture hpbar;
-	Texture manabar;
-	Texture bar_level;
+	Texture bar_vacia, hpbar, manabar, bar_level;
+	Sprite s_empty_bar, s_hp_bar, s_mana_bar, s_bar_lvl;
 	
 	//Sonidos
 	SoundBuffer sb_buffer_enter;
