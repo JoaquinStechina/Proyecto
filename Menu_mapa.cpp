@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Nivel 1", 40){
+Menu_mapa::Menu_mapa() : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40){
 	
 	//Hago un fondo gris para el mapa;
 	Fondo_Base.setSize(Vector2f(1000.f,400.f));
