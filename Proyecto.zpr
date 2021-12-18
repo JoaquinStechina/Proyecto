@@ -61,10 +61,10 @@ path=Opcion_de_menu.cpp
 cursor=28:1
 [source]
 path=PJs.cpp
-cursor=0:0
+cursor=11:0
 [source]
 path=Player.cpp
-cursor=0:0
+cursor=3:0
 [source]
 path=Selector_De_Mapa.cpp
 cursor=69:24
@@ -79,7 +79,7 @@ path=Sprites.cpp
 cursor=0:0
 [source]
 path=Stats.cpp
-cursor=0:0
+cursor=8:47
 [source]
 path=Bloque_Sprite.cpp
 cursor=4:29
@@ -124,10 +124,10 @@ path=Opcion_de_menu.h
 cursor=0:0
 [header]
 path=PJs.h
-cursor=0:0
+cursor=8:21
 [header]
 path=Player.h
-cursor=0:0
+cursor=0:16
 [header]
 path=Selector_De_Mapa.h
 cursor=5:21
@@ -142,7 +142,7 @@ path=Sprites.h
 cursor=0:0
 [header]
 path=Stats.h
-cursor=0:0
+cursor=20:10
 [header]
 path=Bloque_Sprite.h
 cursor=24:0
