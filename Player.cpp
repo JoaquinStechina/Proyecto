@@ -6,7 +6,9 @@ Player::Player() {
 	this->setDestreza(5);
 	this->setInteligencia(5);
 	this->setSuerte(5);
-	this->setVida(this->getConstitucion() * 10);
-	this->setMana(this->getInteligencia() * 5);
+	this->setVidaMax(this->getConstitucion() * 10);
+	this->setManaMax(this->getInteligencia() * 5);
+	this->setVida_Actual(this->getVidaMax());
+	this->setMana_Actual(this->getManaMax());
 }
 

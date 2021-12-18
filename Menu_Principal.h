@@ -8,9 +8,13 @@
 #include "Selector_de_menu.h"
 #include "Juego.h"
 #include <SFML/Audio.hpp>
+#include "Player.h"
 using namespace std;
 
 class Menu_Principal : public Escena{
+	//temporal;
+	Player rockermen;
+	
 	SoundBuffer sb_buffer;
 	Sound s_sonido_enter;
 	int cont_pos;

@@ -3,6 +3,7 @@
 #include "Menu_Sobre_este_juego.h"
 #include "Menu_mapa.h"
 #include "Menu_Nuevo_Juego.h"
+#include "Player.h"
 
 Menu_Principal::Menu_Principal() : fondo_menu_principal("Imagenes/Fondos/fondo2_1.png"), Opcion1("Nuevo Juego", 38), Opcion2("Sobre el Proyecto", 25), Opcion3("Salir", 25){
 	Opcion1.Cambiar_Escala_Opcion_Menu(1.2);
@@ -15,6 +16,7 @@ Menu_Principal::Menu_Principal() : fondo_menu_principal("Imagenes/Fondos/fondo2_
 	Opcion3.Cambiar_Pos_Opcion_Menu(600,355);
 	Opcion3.Cambiar_Pos_Cuadro_Menu(600,360);
 	Selector1.Cambiar_Pos(400, 150);
+	
 	
 	sb_buffer.loadFromFile("Sonidos/Menu_select.wav");
 	s_sonido_enter.setBuffer(sb_buffer);
@@ -50,7 +52,7 @@ void Menu_Principal::Actualizar (RenderWindow &ventana, Juego &j) {
 		if ( cont_pos == 2){
 			Selector1.Cambiar_Pos(400,360);
 			if (Keyboard::isKeyPressed(Keyboard::Space)){
-				j.Cambiar_Escena(new Menu_mapa);
+				j.Cambiar_Escena(new Menu_mapa(rockermen));
 				s_sonido_enter.play();
 				reloj.restart();
 			}

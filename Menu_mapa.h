@@ -8,6 +8,7 @@
 #include "Selector_De_Mapa.h"
 #include <SFML/Audio.hpp>
 #include "Opcion_de_menu.h"
+#include "Player.h"
 using namespace std;
 
 class Menu_mapa : public Escena {
@@ -36,8 +37,11 @@ class Menu_mapa : public Escena {
 	Texture t_boss;
 	Texture t_encuentro;
 	Texture t_loot;
+	
+	//Personaje;
+	Player personaje;
 public:
-	Menu_mapa();
+	Menu_mapa(Player &Personaje);
 	void Actualizar(RenderWindow &ventana, Juego &j) override;
 	void Dibujar(RenderWindow &ventana) override;
 };
