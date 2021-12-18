@@ -2,11 +2,11 @@
 
 PJs::PJs() {}
 
-bool PJs::Esquivar (int & damage) {
-	if()
+bool PJs::Esquivar (PJs &x) {
+	
 }
 
-void PJs::Atacar (PJs & x) {
+void PJs::Atacar (PJs &x) {
 	
 }
 
