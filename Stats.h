@@ -28,13 +28,13 @@ public:
 	int getMana();
 	
 	//Setters
-	void setConstitucion(int x);
-	void setFuerza(int x);
-	void setDestreza(int x);
-	void setInteligencia(int x);
-	void setSuerte(int x);
-	void setVida(int x);
-	void setMana(int x);
+	void setConstitucion (int &x);
+	void setFuerza       (int &x);
+	void setDestreza     (int &x);
+	void setInteligencia (int &x);
+	void setSuerte       (int &x);
+	void setVida         (int &x);
+	void setMana         (int &x);
 };
 
 #endif

@@ -5,8 +5,8 @@
 class PJs : public Stats {
 public:
 	PJs();
-	//bool Esquivar(int damage);
-	//int Atacar(PJs &x);
+	bool Esquivar(int &damage);
+	void Atacar(PJs &x);
 };
 
 #endif
