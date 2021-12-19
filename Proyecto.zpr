@@ -18,7 +18,7 @@ current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=13:1
+cursor=14:0
 open=true
 [source]
 path=Juego.cpp
@@ -37,7 +37,7 @@ path=Fondo.cpp
 cursor=0:0
 [source]
 path=Menu_mapa.cpp
-cursor=100:40
+cursor=91:91
 [source]
 path=Menu_Nueva_Partida.cpp
 cursor=7:33
@@ -64,7 +64,7 @@ path=PJs.cpp
 cursor=5:1
 [source]
 path=Player.cpp
-cursor=8:45
+cursor=11:24
 [source]
 path=Selector_De_Mapa.cpp
 cursor=69:24
@@ -79,7 +79,7 @@ path=Sprites.cpp
 cursor=0:0
 [source]
 path=Stats.cpp
-cursor=12:24
+cursor=27:51
 [source]
 path=Bloque_Sprite.cpp
 cursor=4:29
@@ -127,7 +127,7 @@ path=PJs.h
 cursor=4:26
 [header]
 path=Player.h
-cursor=0:16
+cursor=6:7
 [header]
 path=Selector_De_Mapa.h
 cursor=5:21
@@ -142,7 +142,7 @@ path=Sprites.h
 cursor=0:0
 [header]
 path=Stats.h
-cursor=29:15
+cursor=38:31
 [header]
 path=Bloque_Sprite.h
 cursor=24:0

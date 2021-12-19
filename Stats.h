@@ -4,15 +4,16 @@
 using namespace std;
 
 struct Stats_Storage{
-	int Constitucion;
-	int Fuerza;
-	int Destreza;
-	int Inteligencia;
-	int Suerte;
-	int Vida;
-	int Mana;
-	int Vida_actual;
-	int Mana_actual;
+	float Constitucion;
+	float Fuerza;
+	float Destreza;
+	float Inteligencia;
+	float Suerte;
+	float Vida;
+	float Mana;
+	float Vida_actual;
+	float Mana_actual;
+	int   Nivel;
 };
 
 class Stats {
@@ -21,26 +22,28 @@ public:
 	Stats();
 	
 	//Getters
-	int getConstitucion();
-	int getFuerza();
-	int getDestreza();
-	int getInteligencia();
-	int getSuerte();
-	int getVidaMax();
-	int getManaMax();
-	int getVida_Actual();
-	int getMana_Actual();
+	float getConstitucion();
+	float getFuerza      ();
+	float getDestreza    ();
+	float getInteligencia();
+	float getSuerte      ();
+	float getVidaMax     ();
+	float getManaMax     ();
+	float getVida_Actual ();
+	float getMana_Actual ();
+	int   getNivel   	 ();
 	
 	//Setters
-	void setConstitucion (int x);
-	void setFuerza       (int x);
-	void setDestreza     (int x);
-	void setInteligencia (int x);
-	void setSuerte       (int x);
-	void setVidaMax      (int x);
-	void setManaMax      (int x);
-	void setVida_Actual	 (int x);
-	void setMana_Actual  (int x);
+	void setConstitucion (float x);
+	void setFuerza       (float x);
+	void setDestreza     (float x);
+	void setInteligencia (float x);
+	void setSuerte       (float x);
+	void setVidaMax      (float x);
+	void setManaMax      (float x);
+	void setVida_Actual	 (float x);
+	void setMana_Actual  (float x);
+	void setNivel        (int x);
 };
 
 #endif

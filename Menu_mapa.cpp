@@ -81,9 +81,7 @@ Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.j
 	
 	
 					//TEMPORAL
-	float vidamax= personaje.getVidaMax();
 	personaje.setVida_Actual(40);
-	float vidaact= personaje.getVida_Actual();
 	
 	
 	//Barra de vida
@@ -91,7 +89,7 @@ Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.j
 	s_empty_bar.setPosition(387.75,493.5);
 	s_empty_bar.setScale(0.5,0.5);
 	s_hp_bar.setTexture(hpbar);
-	s_hp_bar.setTextureRect(IntRect(0, 0, 424*(vidaact/vidamax), 227));
+	s_hp_bar.setTextureRect(IntRect(0, 0, 424*(personaje.getVida_Actual()/personaje.getVidaMax()), 227));
 	s_hp_bar.setPosition(387.75,492.5);
 	s_hp_bar.setScale(0.5,0.5);
 	s_mana_bar.setTexture(manabar);
