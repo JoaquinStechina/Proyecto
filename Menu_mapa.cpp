@@ -6,7 +6,7 @@
 #include "Player.h"
 using namespace std;
 
-Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40){
+Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30){
 	
 	personaje = m_Personaje;
 	
@@ -79,11 +79,6 @@ Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.j
 	titulo.Cambiar_Pos_Opcion_Menu(600,40);
 	titulo.Cambiar_Pos_Cuadro_Menu(600,50);
 	
-	
-					//TEMPORAL
-	personaje.setVida_Actual(40);
-	
-	
 	//Barra de vida
 	s_empty_bar.setTexture(bar_vacia);
 	s_empty_bar.setPosition(387.75,493.5);
@@ -100,6 +95,17 @@ Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.j
 	s_bar_lvl.setTexture(bar_level);
 	s_bar_lvl.setPosition(387.75,493);
 	s_bar_lvl.setScale(0.5,0.5);
+	
+	//Moneda
+	t_moneda_icon.loadFromFile("Imagenes/Sprites/Monedas.png");
+	s_moneda_icon.setTexture(t_moneda_icon);
+	s_moneda_icon.setPosition(825,526);
+	monedas.Cambiar_Pos_Cuadro_mapa(920,550);
+	monedas.Cambiar_Pos_Opcion_mapa(920,540);
+	string nueva_cant_monedas = to_string(personaje.GetMonedas());
+	monedas.Cambiar_texto(nueva_cant_monedas);
+	monedas.Cambiar_color_fuente(Color(255,200,60));
+	
 }
 
 void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
@@ -108,6 +114,7 @@ void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 		s_sonido_enter.play();
 	}
 	selec_mapa.Actualizar(ventana, V_Filas,columna_actual_flecha);
+	monedas.Actualizar();
 }
 
 void Menu_mapa::Dibujar (RenderWindow & ventana) {
@@ -122,5 +129,7 @@ void Menu_mapa::Dibujar (RenderWindow & ventana) {
 	ventana.draw(s_hp_bar);
 	ventana.draw(s_mana_bar);
 	ventana.draw(s_bar_lvl);
+	ventana.draw(s_moneda_icon);
+	monedas.Dibujar(ventana);
 }
 
