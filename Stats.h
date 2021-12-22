@@ -13,7 +13,6 @@ struct Stats_Storage{
 	float Mana;
 	float Vida_actual;
 	float Mana_actual;
-	int   Nivel;
 };
 
 class Stats {
@@ -31,7 +30,6 @@ public:
 	float getManaMax     ();
 	float getVida_Actual ();
 	float getMana_Actual ();
-	int   getNivel   	 ();
 	
 	//Setters
 	void setConstitucion (float x);
@@ -43,7 +41,6 @@ public:
 	void setManaMax      (float x);
 	void setVida_Actual	 (float x);
 	void setMana_Actual  (float x);
-	void setNivel        (int x);
 };
 
 #endif

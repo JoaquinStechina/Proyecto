@@ -14,7 +14,6 @@ float Stats::getVidaMax()      {return a.Vida;}
 float Stats::getManaMax()      {return a.Mana;}
 float Stats::getVida_Actual()  {return a.Vida_actual;}
 float Stats::getMana_Actual()  {return a.Mana_actual;}
-int   Stats::getNivel()        {return a.Nivel;};
 //Setters
 void Stats::setConstitucion (float x){a.Constitucion = x;}
 void Stats::setFuerza       (float x){a.Fuerza = x;}
@@ -25,6 +24,5 @@ void Stats::setVidaMax		(float x){a.Vida = x;}
 void Stats::setManaMax		(float x){a.Mana = x;}
 void Stats::setVida_Actual  (float x){a.Vida_actual = x;}
 void Stats::setMana_Actual  (float x){a.Mana_actual = x;}
-void Stats::setNivel        (int x)  {a.Nivel = x;}
 
 

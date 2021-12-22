@@ -26,3 +26,11 @@ void Player::SumarMonedas (int cantMonedas) {
 	monedas = monedas + cantMonedas;
 }
 
+void Player::setNivel (int x) {
+	nivel = x;
+}
+
+int Player::getNivel ( ) {
+	return nivel;
+}
+
