@@ -6,7 +6,7 @@
 #include "Player.h"
 using namespace std;
 
-Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30){
+Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30), inventario("inventario", 30){
 	
 	personaje = m_Personaje;
 	
@@ -106,10 +106,18 @@ Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.j
 	monedas.Cambiar_texto(nueva_cant_monedas);
 	monedas.Cambiar_color_fuente(Color(255,200,60));
 	
+	//Inventario;
+	inventario.Cambiar_Pos_Opcion_Menu(1000,40);
+	inventario.Cambiar_Pos_Cuadro_Menu(1000,50);
+	
 }
 
 void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 	if (Keyboard::isKeyPressed(Keyboard::Escape)){
+		j.Cambiar_Escena(new Menu_Principal);
+		s_sonido_enter.play();
+	}
+	if (Keyboard::isKeyPressed(Keyboard::I)){
 		j.Cambiar_Escena(new Menu_Principal);
 		s_sonido_enter.play();
 	}
@@ -131,5 +139,6 @@ void Menu_mapa::Dibujar (RenderWindow & ventana) {
 	ventana.draw(s_bar_lvl);
 	ventana.draw(s_moneda_icon);
 	monedas.Dibujar(ventana);
+	inventario.Dibujar(ventana);
 }
 
