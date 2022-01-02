@@ -66,7 +66,14 @@ Player::Player() {
 	amuleto_int.setTipo(3);
 	lista_objetos.push_back(amuleto_int);
 	
-	
+	//Inventario ficticio;
+	int contadorcito = 0;
+	for (Objeto &x : lista_objetos){
+		contadorcito++;
+		if (contadorcito = 1){ Inventario.push_back(x); }
+		if (contadorcito = 2){ Inventario.push_back(x); }
+		if (contadorcito = 3){ Inventario.push_back(x); }
+	}
 }
 
 

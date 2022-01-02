@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "Player.h"
+#include "Menu_Inventario.h"
 using namespace std;
 
 Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30), inventario("inventario", 30){
@@ -118,7 +119,7 @@ void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 		s_sonido_enter.play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::I)){
-		j.Cambiar_Escena(new Menu_Principal);
+		j.Cambiar_Escena(new Menu_Inventario(personaje, *this));
 		s_sonido_enter.play();
 	}
 	selec_mapa.Actualizar(ventana, V_Filas,columna_actual_flecha);
