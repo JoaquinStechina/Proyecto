@@ -44,6 +44,7 @@ class Menu_mapa : public Escena {
 	Player personaje;
 public:
 	Menu_mapa(Player &Personaje);
+	Menu_mapa(Player &Personaje, list<Filas_De_Nodos> vector_de_filas, int columna_actual);
 	void Actualizar(RenderWindow &ventana, Juego &j) override;
 	void Dibujar(RenderWindow &ventana) override;
 };

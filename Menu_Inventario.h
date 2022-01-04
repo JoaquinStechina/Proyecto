@@ -10,9 +10,11 @@
 class Menu_Inventario : public Escena {
 	Fondo fondito;
 	Opcion_de_menu Titulo;
-	Menu_mapa mapa_aux;
+	Player personaje_aux;
+	list<Filas_De_Nodos> v_de_filas;
+	int p_del_selector;
 public:
-	Menu_Inventario(Player &Jugador, Menu_mapa Mapa);
+	Menu_Inventario(Player &Jugador, list<Filas_De_Nodos> vector_filas, int pos_selector);
 	void Actualizar(RenderWindow &ventana, Juego &j) override;
 	void Dibujar(RenderWindow &ventana) override;
 private:
