@@ -5,12 +5,7 @@ Menu_Inventario::Menu_Inventario(Player &Jugador, list<Filas_De_Nodos> vector_fi
 	Titulo.Cambiar_Pos_Cuadro_Menu(600,300);
 	Titulo.Cambiar_Pos_Opcion_Menu(600,300);
 	//Copio el vector y la posicion del selector;
-	if(!v_de_filas.empty()){  //Si no esta vacio se vacia;
-		v_de_filas.erase(v_de_filas.begin(), v_de_filas.end());
-	}
-	for(auto i=vector_filas.begin(); i!=vector_filas.end(); next(i)) { 
-		v_de_filas.push_back(*i);
-	}
+	v_de_filas = vector_filas;
 	p_del_selector = pos_selector;
 	personaje_aux = Jugador;
 }

@@ -8,6 +8,7 @@ class Nodos {
 	Sprite s_nodo;
 public:
 	Nodos();
+	Nodos(int tipo_nuevo_nodo);
 	void Definir_tipo_nodo(int t_nodo);
 	int Ver_Valor_Nodo();
 	void Definir_sprite(Texture &t_textura);

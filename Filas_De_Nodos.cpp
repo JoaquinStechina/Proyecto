@@ -1,7 +1,10 @@
 #include "Filas_De_Nodos.h"
 #include <cstdlib>
 #include <iostream>
+#include <list>
 using namespace std;
+
+Filas_De_Nodos::Filas_De_Nodos(){}
 
 Filas_De_Nodos::Filas_De_Nodos(bool random) {
 	Tamanio_fila_nodo = (rand()%3)+1;
@@ -9,9 +12,13 @@ Filas_De_Nodos::Filas_De_Nodos(bool random) {
 		Nodos nodo_aux;
 		v_nodos.push_back(nodo_aux);
 	}
-	
 }
 
+Filas_De_Nodos::Filas_De_Nodos (int valor_nodo) {
+	Nodos aux_nodo;
+	aux_nodo.Definir_tipo_nodo(valor_nodo);
+	v_nodos.push_back(aux_nodo);
+}
 
 void Filas_De_Nodos::Ver_Valor_Nodos ( ) {
 	cout << v_nodos.size() << endl;
@@ -37,12 +44,6 @@ void Filas_De_Nodos::Dibujar (RenderWindow & ventana) {
 	for(Nodos &x : v_nodos) { 
 		x.Dibujar(ventana);
 	}
-}
-
-Filas_De_Nodos::Filas_De_Nodos (int valor_nodo) {
-	Nodos aux_nodo;
-	aux_nodo.Definir_tipo_nodo(valor_nodo);
-	v_nodos.push_back(aux_nodo);
 }
 
 void Filas_De_Nodos::Set_Sprite_nodos (Texture &t_mercado, Texture &t_campfire, Texture &t_loot, Texture &t_start, Texture &t_boss, Texture &t_encuentro) {

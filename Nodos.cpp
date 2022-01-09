@@ -20,6 +20,10 @@ Nodos::Nodos(){
 	s_nodo.setOrigin(25,25);
 }
 
+Nodos::Nodos(int tipo_nuevo_nodo){
+	Tipo_de_Nodo = tipo_nuevo_nodo;
+	s_nodo.setOrigin(25,25);
+}
 
 int Nodos::Ver_Valor_Nodo ( ) {
 	return Tipo_de_Nodo;

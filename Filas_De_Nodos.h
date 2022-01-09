@@ -9,6 +9,7 @@ class Filas_De_Nodos {
 	list<Nodos> v_nodos;
 	int Tamanio_fila_nodo;
 public:
+	Filas_De_Nodos();
 	Filas_De_Nodos(bool random);
 	Filas_De_Nodos(int valor_nodo);
 	int Ver_Cantidad_Nodos();

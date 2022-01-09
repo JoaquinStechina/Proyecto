@@ -173,9 +173,7 @@ Menu_mapa::Menu_mapa (Player & Personaje, list<Filas_De_Nodos> vector_de_filas, 
 	if(!V_Filas.empty()){  //Si no esta vacio se vacia;
 		V_Filas.erase(V_Filas.begin(), V_Filas.end());
 	}
-	for(auto i=vector_de_filas.begin(); i!=vector_de_filas.end(); next(i)) { 
-		V_Filas.push_back(*i);
-	}
+	V_Filas = vector_de_filas;
 	columna_actual_flecha = columna_actual;
 	
 	//Posiciono los nodos;
@@ -192,7 +190,6 @@ Menu_mapa::Menu_mapa (Player & Personaje, list<Filas_De_Nodos> vector_de_filas, 
 	}
 	
 	//Posiciono mi selector;
-	columna_actual_flecha = 2;
 	selec_mapa.Cambiar_Pos((((1000.f/(V_Filas.size()+1))*(columna_actual_flecha))+50), 300.f);
 	
 	//Sonidos;
