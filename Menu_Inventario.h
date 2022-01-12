@@ -6,11 +6,20 @@
 #include "Fondo.h"
 #include "Menu_mapa.h"
 #include "Juego.h"
+#include <list>
+#include "Objeto.h"
+using namespace std;
 
 class Menu_Inventario : public Escena {
+	//Menu;
 	Fondo fondito;
 	Opcion_de_menu Titulo;
+	
+	//Personaje;
 	Player personaje_aux;
+	list<Objeto> inv_aux;
+	
+	//Datos del mapa;
 	list<Filas_De_Nodos> v_de_filas;
 	int p_del_selector;
 public:

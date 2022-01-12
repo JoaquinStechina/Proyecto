@@ -4,11 +4,10 @@
 using namespace sf;
 
 class Sprites {
-protected:
+public:
 	Texture t_de_sprite;
 	Sprite s_sprite;
 	FloatRect r_rect;
-public:
 	Sprites();
 };
 

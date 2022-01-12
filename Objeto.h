@@ -2,6 +2,7 @@
 #define OBJETO_H
 #include <string>
 #include "Sprites.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 using namespace std;
 
 class Objeto : public Sprites {
@@ -24,8 +25,11 @@ public:
 	int getTipo     ();
 	string getNombre();
 	
-	void Pasiva();
+	void CambiarPos(float x, float y);
+	
+	void Pasiva();					//Si debe curar al personaje al atacar, o si debe darle alguna bonificacion extra
 	void Actualizar();
+	void Dibujar(RenderWindow &ventanita);
 };
 
 #endif
