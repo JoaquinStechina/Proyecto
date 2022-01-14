@@ -1,9 +1,11 @@
 #include "Objeto.h"
+#include <iostream>
+using namespace std;
 
 Objeto::Objeto(int tier) {
-	rareza = tier;			//si es raro, comun, o poco comun
+	rareza = tier;			//si es comun, poco comun, o raro;
 	stat = 0;				//0 seria constitucion, 1 seria la estadistica que sigue, y asi
-	bufo = 3*tier;			//Es el bonificador que da en esa estadistica, aumenta segun la rareza
+	bufo = 3*rareza;			//Es el bonificador que da en esa estadistica, aumenta segun la rareza
 	precio = 10*tier;		//Lo que costaria comprarlo en el juego
 	tipo = 1;				//Si es un arma, armadura, o baratija
 }
@@ -28,6 +30,10 @@ void Objeto::Pasiva ( ) {}
 
 void Objeto::Actualizar(){
 	if(tipo == 1){												//Armaduras
+		if( rareza == 0 ){
+			t_de_sprite.loadFromFile("Imagenes/Sprites/arm0.png");
+			s_sprite.setTexture(t_de_sprite);
+		}
 		if( rareza == 1 ){
 			t_de_sprite.loadFromFile("Imagenes/Sprites/arm1.png");
 			s_sprite.setTexture(t_de_sprite);
@@ -42,6 +48,10 @@ void Objeto::Actualizar(){
 		}
 	}
 	if(tipo == 2){												//Armas
+		if( rareza == 0 ){
+			t_de_sprite.loadFromFile("Imagenes/Sprites/wpn0.png");
+			s_sprite.setTexture(t_de_sprite);
+		}
 		if( rareza == 1 ){
 			t_de_sprite.loadFromFile("Imagenes/Sprites/wpn1.png");
 			s_sprite.setTexture(t_de_sprite);
@@ -56,6 +66,10 @@ void Objeto::Actualizar(){
 		}
 	}
 	if(tipo == 3){												//Baratijas
+		if( rareza == 0 ){
+			t_de_sprite.loadFromFile("Imagenes/Sprites/ani0.png");
+			s_sprite.setTexture(t_de_sprite);
+		}
 		if( rareza == 1 ){
 			t_de_sprite.loadFromFile("Imagenes/Sprites/ani1.png");
 			s_sprite.setTexture(t_de_sprite);

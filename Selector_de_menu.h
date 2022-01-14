@@ -9,7 +9,6 @@ class Selector_de_menu : public Sprites {
 	Sound S_mover;
 	Sprite Circulo_sprite_selector;
 	int cont_pos;
-	Event evento;
 	Clock reloj;
 public:
 	Selector_de_menu();
