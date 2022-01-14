@@ -12,9 +12,10 @@
 using namespace std;
 
 class Menu_Principal : public Escena{
-	//temporal;
+	//temporal, solo para ver que funcionen ciertas cosas, eliminar mas tarde;
 	Player rockermen;
 	
+	//Menu
 	SoundBuffer sb_buffer;
 	Sound s_sonido_enter;
 	int cont_pos;

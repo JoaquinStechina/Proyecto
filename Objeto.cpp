@@ -94,3 +94,8 @@ void Objeto::Dibujar (RenderWindow & ventanita) {
 	ventanita.draw(s_sprite);
 }
 
+
+Objeto::Objeto ( ) {
+	
+}
+

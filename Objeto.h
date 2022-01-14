@@ -10,6 +10,7 @@ class Objeto : public Sprites {
 	string nombre;
 public:
 	Objeto(int tier);
+	Objeto();
 	
 	void setRareza(int x);
 	void setStat  (int x);

@@ -41,4 +41,3 @@ void Opcion_de_menu::Dibujar (RenderWindow & win) {
 void Opcion_de_menu::Cambiar_Pos_Cuadro_Menu (const float posx, const float posy) {
 	s_sprite.setPosition(posx, posy);
 }
-

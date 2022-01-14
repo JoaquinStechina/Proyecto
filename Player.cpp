@@ -4,7 +4,7 @@ using namespace std;
 
 Player::Player() {
 	//Set Unidades por defecto;
-	monedas = 0;
+	monedas = 50;
 	this->setConstitucion(5);
 	this->setFuerza(5);
 	this->setDestreza(5);
@@ -20,9 +20,9 @@ Player::Player() {
 	int contadorcito = 0;
 	for (Objeto &x : objetos_del_juego){
 		contadorcito++;	
-		if (contadorcito == 12){Inventario.push_back(x); }
-		if (contadorcito == 13){Inventario.push_back(x); }
-		if (contadorcito == 15){Inventario.push_back(x); }
+		if (contadorcito == 1){Inventario.push_back(x); }
+		if (contadorcito == 2){Inventario.push_back(x); }
+		if (contadorcito == 3){Inventario.push_back(x); }
 	}
 }
 
@@ -50,5 +50,10 @@ int Player::getNivel ( ) {
 
 list<Objeto> Player::Obtener_Inventario ( ) {
 	return Inventario;
+}
+
+
+void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
+	Inventario = nuevo_inventario;
 }
 

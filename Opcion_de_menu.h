@@ -4,6 +4,8 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "Sprites.h"
+#include <string>
+using namespace std;
 using namespace sf;
 
 class Opcion_de_menu : public Sprites {

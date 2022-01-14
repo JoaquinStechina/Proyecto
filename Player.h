@@ -19,6 +19,7 @@ public:
 	int getNivel();
 	int GetMonedas();
 	list<Objeto> Obtener_Inventario();
+	void Set_Inventario( list<Objeto> nuevo_inventario );
 };
 
 #endif
