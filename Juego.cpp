@@ -30,10 +30,10 @@ void Juego::Jugar ( ) {
 	}
 }
 
-Juego::~Juego ( ) {
-	delete esc_actual;
-}
-
 void Juego::Cambiar_Escena (Escena * esc_nueva) {
 	esc_prox = esc_nueva;
+}
+
+Juego::~Juego ( ) {
+	delete esc_actual;
 }

@@ -1,7 +1,10 @@
 #include "Player.h"
+#include <iostream>
+using namespace std;
 
 Player::Player() {
-	monedas = 0;
+	//Set Unidades por defecto;
+	monedas = 50;
 	this->setConstitucion(5);
 	this->setFuerza(5);
 	this->setDestreza(5);
@@ -11,6 +14,16 @@ Player::Player() {
 	this->setManaMax(this->getInteligencia() * 5);
 	this->setVida_Actual(this->getVidaMax());
 	this->setMana_Actual(this->getManaMax());
+	
+
+//	Inventario ficticio;
+	int contadorcito = 0;
+	for (Objeto &x : objetos_del_juego){
+		contadorcito++;	
+		if (contadorcito == 1){Inventario.push_back(x); }
+		if (contadorcito == 2){Inventario.push_back(x); }
+		if (contadorcito == 3){Inventario.push_back(x); }
+	}
 }
 
 
@@ -32,5 +45,15 @@ void Player::setNivel (int x) {
 
 int Player::getNivel ( ) {
 	return nivel;
+}
+
+
+list<Objeto> Player::Obtener_Inventario ( ) {
+	return Inventario;
+}
+
+
+void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
+	Inventario = nuevo_inventario;
 }
 

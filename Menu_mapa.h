@@ -17,6 +17,7 @@ class Menu_mapa : public Escena {
 	Texture bar_vacia, hpbar, manabar, bar_level, t_moneda_icon;
 	Sprite s_empty_bar, s_hp_bar, s_mana_bar, s_bar_lvl, s_moneda_icon;
 	Opcion_de_mapa monedas;
+	Opcion_de_menu titulo, inventario;
 	
 	//Sonidos
 	SoundBuffer sb_buffer_enter;
@@ -25,7 +26,6 @@ class Menu_mapa : public Escena {
 	//Fondo
 	RectangleShape Fondo_Base;
 	Fondo Fondo_juego;
-	Opcion_de_menu titulo;
 	
 	//Selector y filas
 	list<Filas_De_Nodos> V_Filas;
@@ -44,6 +44,7 @@ class Menu_mapa : public Escena {
 	Player personaje;
 public:
 	Menu_mapa(Player &Personaje);
+	Menu_mapa(Player &Personaje, list<Filas_De_Nodos> vector_de_filas, int columna_actual);
 	void Actualizar(RenderWindow &ventana, Juego &j) override;
 	void Dibujar(RenderWindow &ventana) override;
 };
