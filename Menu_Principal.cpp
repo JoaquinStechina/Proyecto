@@ -5,7 +5,7 @@
 #include "Menu_Nuevo_Juego.h"
 #include "Player.h"
 
-Menu_Principal::Menu_Principal() : fondo_menu_principal("Imagenes/Fondos/fondo2_1.png"), Opcion1("Nuevo Juego", 38), Opcion2("Sobre el Proyecto", 25), Opcion3("Salir", 25){
+Menu_Principal::Menu_Principal() : fondo_menu_principal("Imagenes/Fondos/fondo2_1.png"), Opcion1("Jugar", 38), Opcion2("Sobre el Proyecto", 25), Opcion3("Salir", 25){
 	Opcion1.Cambiar_Escala_Opcion_Menu(1.2);
 	Opcion1.Cambiar_Pos_Opcion_Menu(600,140);
 	Opcion1.Cambiar_Pos_Cuadro_Menu(600,150);

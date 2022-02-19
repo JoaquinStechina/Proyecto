@@ -2,8 +2,8 @@
 
 Bloque_Sprite::Bloque_Sprite(std::string nombre_textura) {
 	t_de_sprite.loadFromFile(nombre_textura);
-	t_de_sprite.setSmooth(true);
 	s_sprite.setTexture(t_de_sprite);
+	t_de_sprite.setSmooth(true);
 }
 //Bloque_Sprite(std::string nombre_textura, FloatRect bloque, FloatRect bloque_texto, std::string texto) {
 //	

@@ -14,12 +14,10 @@ tab_width=4
 tab_use_spaces=0
 explorer_path=.
 inherits_from=
-current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=9:17
-open=true
+cursor=13:0
 [source]
 path=Juego.cpp
 cursor=38:1
@@ -40,13 +38,13 @@ path=Menu_mapa.cpp
 cursor=152:23
 [source]
 path=Menu_Nueva_Partida.cpp
-cursor=9:0
+cursor=12:0
 [source]
 path=Menu_Nuevo_Juego.cpp
 cursor=13:0
 [source]
 path=Menu_Principal.cpp
-cursor=58:3
+cursor=7:103
 [source]
 path=Menu_Sobre_este_juego.cpp
 cursor=26:20
@@ -82,7 +80,7 @@ path=Stats.cpp
 cursor=6:0
 [source]
 path=Bloque_Sprite.cpp
-cursor=4:29
+cursor=5:29
 [source]
 path=Opcion_de_mapa.cpp
 cursor=29:7
@@ -121,7 +119,7 @@ path=Menu_mapa.h
 cursor=16:60
 [header]
 path=Menu_Nueva_Partida.h
-cursor=17:0
+cursor=18:20
 [header]
 path=Menu_Nuevo_Juego.h
 cursor=11:0
@@ -163,7 +161,7 @@ path=Stats.h
 cursor=31:25
 [header]
 path=Bloque_Sprite.h
-cursor=24:0
+cursor=19:30
 [header]
 path=Opcion_de_mapa.h
 cursor=0:0
