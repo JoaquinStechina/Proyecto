@@ -16,7 +16,7 @@ Menu_Principal::Menu_Principal() : fondo_menu_principal("Imagenes/Fondos/fondo2_
 	Opcion3.Cambiar_Pos_Opcion_Menu(600,355);
 	Opcion3.Cambiar_Pos_Cuadro_Menu(600,360);
 	Selector1.Cambiar_Pos(400, 150);
-	
+	Selector1.setCont_Max(3);
 	
 	sb_buffer.loadFromFile("Sonidos/Menu_select.wav");
 	s_sonido_enter.setBuffer(sb_buffer);

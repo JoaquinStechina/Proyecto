@@ -10,6 +10,7 @@ Menu_Nuevo_Juego::Menu_Nuevo_Juego() : fondo("Imagenes/Fondos/fondo2_1.png"), Op
 	Opcion2.Cambiar_Pos_Opcion_Menu(600,255);
 	Opcion2.Cambiar_Pos_Cuadro_Menu(600,260);
 	Selector1.Cambiar_Pos(400, 150);
+	Selector1.setCont_Max(2);
 	
 	sb_buffer.loadFromFile("Sonidos/Menu_select.wav");
 	s_sonido_enter.setBuffer(sb_buffer);

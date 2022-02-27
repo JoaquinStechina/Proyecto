@@ -13,21 +13,24 @@ Selector_de_menu::Selector_de_menu() {
 	reloj.restart();
 }
 
+void Selector_de_menu::setCont_Max(int i){
+	cont_max = i;
+}
 
 int Selector_de_menu::Actualizar(RenderWindow &win) {
 	if ( reloj.getElapsedTime().asSeconds() > 0.2 ){		//Si pasaron al menos 0.2 segundos del ultimo input;
 		if (Keyboard::isKeyPressed(Keyboard::Down)){
 			cont_pos++;
-			if (cont_pos == 3){
+			if (cont_pos == cont_max){
 				cont_pos = 0;
-			}
+			} 
 			S_mover.play();
 			reloj.restart();
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Up)){
 			cont_pos--;
 			if (cont_pos == -1){
-				cont_pos = 2;
+				cont_pos = cont_max-1;
 			}
 			S_mover.play();
 			reloj.restart();
