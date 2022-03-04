@@ -16,7 +16,7 @@ using namespace sf;
 
 class Menu_Nueva_Partida : public Escena {
 	Bloque_Sprite arreglo_cuadros[5];
-	Bloque_Sprite Cuadro1, Cuadro2;
+	Bloque_Sprite Cuadro1, Cuadro2, Cuadro3;
 	Clock reloj;
 	Fondo fondo;
 	int cont_pos;

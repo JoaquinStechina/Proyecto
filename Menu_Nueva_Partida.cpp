@@ -1,21 +1,25 @@
 #include "Menu_Nueva_Partida.h"
 #include "Menu_Nuevo_Juego.h"
 
-Menu_Nueva_Partida::Menu_Nueva_Partida() : fondo("Imagenes/Fondos/fondo2_1.png"), Cuadro1("Imagenes/Sprites/Letrero_metal.png","Creador de personaje"), Cuadro2("Imagenes/Sprites/bloquesito_steel.png",10) {
+Menu_Nueva_Partida::Menu_Nueva_Partida() : fondo("Imagenes/Fondos/fondo2_1.png"), Cuadro1("Imagenes/Sprites/Letrero_metal.png","Creador de personaje"), Cuadro2("Imagenes/Sprites/bloquesito_steel.png",10), Cuadro3("Imagenes/Sprites/Letrero_metal.png","Continuar") {
 	
-	Cuadro1.cambiar_posicion_texto(500,160);
-	Cuadro1.cambiar_posicion_bloque(500,165);
 	Cuadro1.cambiar_escala_bloque(1.1);
+	Cuadro1.cambiar_posicion_texto(600,50);
+	Cuadro1.cambiar_posicion_bloque(600,55);
 	
-	Cuadro2.cambiar_posicion_texto(600,150);
-	Cuadro2.cambiar_posicion_bloque(600,155.5);
+	Cuadro2.cambiar_posicion_texto(600,130);
+	Cuadro2.cambiar_posicion_bloque(600,135.5);
 	Cuadro2.cambiar_escala_bloque(1.1);
 	
-	Selector1.Cambiar_Pos(340, 225);
-	Selector1.setCont_Max(5);
+	Cuadro3.cambiar_escala_bloque(1.1);
+	Cuadro3.cambiar_posicion_texto(600,555);
+	Cuadro3.cambiar_posicion_bloque(600,560);
+	
+	Selector1.Cambiar_Pos(340, 210);
+	Selector1.setCont_Max(6);
 	
 	float x = 500;
-	float y = 225;
+	float y = 210;
 	
 	for(int i=0;i<5;i++) { 
 		string texto;
@@ -47,11 +51,11 @@ Menu_Nueva_Partida::Menu_Nueva_Partida() : fondo("Imagenes/Fondos/fondo2_1.png")
 	}
 	
 	float cuadro_x = 700;
-	float cuadro_y = 225;
+	float cuadro_y = 210;
 	
 	for(int i=0;i<5;i++) { 
 		arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_predeterminados[i]);
-		arreglo_cuadros[i].cambiar_posicion_texto(cuadro_x+5,cuadro_y-10);
+		arreglo_cuadros[i].cambiar_posicion_texto(cuadro_x,cuadro_y-10);
 		arreglo_cuadros[i].cambiar_posicion_bloque(cuadro_x,cuadro_y+0.5);
 		cuadro_y += 70;
 	}
@@ -69,7 +73,7 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 			reloj.restart();
 		}
 		if(cont_pos == 0){
-			Selector1.Cambiar_Pos(340,225);
+			Selector1.Cambiar_Pos(340,210);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
 				if(puntos_predeterminados[cont_pos] > 1){
 					puntos_predeterminados[cont_pos] -= 1;
@@ -90,7 +94,7 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 			}
 		}
 		if(cont_pos == 1){
-			Selector1.Cambiar_Pos(340,295);
+			Selector1.Cambiar_Pos(340,280);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
 				if(puntos_predeterminados[cont_pos] > 1){
 					puntos_predeterminados[cont_pos] -= 1;
@@ -111,7 +115,7 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 			}
 		}
 		if(cont_pos == 2){
-			Selector1.Cambiar_Pos(340,365);
+			Selector1.Cambiar_Pos(340,350);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
 				if(puntos_predeterminados[cont_pos] > 1){
 					puntos_predeterminados[cont_pos] -= 1;
@@ -132,7 +136,7 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 			}
 		}
 		if(cont_pos == 3){
-			Selector1.Cambiar_Pos(340,435);
+			Selector1.Cambiar_Pos(340,420);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
 				if(puntos_predeterminados[cont_pos] > 1){
 					puntos_predeterminados[cont_pos] -= 1;
@@ -153,7 +157,7 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 			}
 		}
 		if(cont_pos == 4){
-			Selector1.Cambiar_Pos(340,505);
+			Selector1.Cambiar_Pos(340,490);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
 				if(puntos_predeterminados[cont_pos] > 1){
 					puntos_predeterminados[cont_pos] -= 1;
@@ -173,6 +177,9 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 				}
 			}
 		}
+		if(cont_pos == 5){
+			Selector1.Cambiar_Pos(435,560);
+		}
 	}
 }
 
@@ -187,5 +194,6 @@ void Menu_Nueva_Partida::Dibujar (RenderWindow & ventana) {
 		arreglo_cuadros[i].Dibujar(ventana);
 	}
 	Selector1.Dibujar(ventana);
+	Cuadro3.Dibujar(ventana);
 }
 
