@@ -11,17 +11,19 @@
 #include "Selector_de_menu.h"
 #include "Bloque_Sprite.h"
 #include <SFML/Graphics/Rect.hpp>
+#include "Menu_mapa.h"
+#include "Player.h"
 
 using namespace sf;
 
 class Menu_Nueva_Partida : public Escena {
+	Player player;
 	Bloque_Sprite arreglo_cuadros[5];
 	Bloque_Sprite Cuadro1, Cuadro2, Cuadro3;
 	Clock reloj;
 	Fondo fondo;
 	int cont_pos;
 	int puntos_disponibles = 10;
-	int puntos_predeterminados[5] = {5,5,5,5,5};
 	Opcion_de_menu arreglo[5];
 	Selector_de_menu Selector1;
 	SoundBuffer sb_buffer;
