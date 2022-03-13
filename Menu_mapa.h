@@ -18,6 +18,7 @@ class Menu_mapa : public Escena {
 	Sprite s_empty_bar, s_hp_bar, s_mana_bar, s_bar_lvl, s_moneda_icon;
 	Opcion_de_mapa monedas;
 	Opcion_de_menu titulo, inventario;
+	Opcion_de_menu guardar_partida;
 	
 	//Sonidos
 	SoundBuffer sb_buffer_enter;
