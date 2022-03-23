@@ -131,6 +131,7 @@ void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 		s_sonido_enter.play();
 	}
 	if(Keyboard::isKeyPressed(Keyboard::G)){
+		guardado a(personaje);
 		s_sonido_enter.play();
 	}
 	selec_mapa.Actualizar(ventana, V_Filas,columna_actual_flecha);

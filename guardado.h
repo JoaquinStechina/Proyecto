@@ -3,12 +3,15 @@
 #include "Filas_De_Nodos.h"
 #include <list>
 #include "Player.h"
+#include <iostream>
+#include <fstream>
+#include "Elementos.h"
 
 class guardado {
-public:
-	guardado();
 private:
-	guardado(Player &Personaje, list<Filas_De_Nodos> vector_de_filas, int columna_actual);
+	Elementos_jugador ab;
+public:
+	guardado(Player &Personaje);
 };
 
 #endif

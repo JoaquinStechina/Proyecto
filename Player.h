@@ -6,6 +6,7 @@
 #include "Objeto.h"
 #include "Lista_de_objetos.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include "Elementos.h"
 using namespace std;
 
 class Player : public Stats, public Lista_de_objetos{
@@ -13,6 +14,7 @@ class Player : public Stats, public Lista_de_objetos{
 	list<Objeto> Inventario;
 public:
 	Player();
+	Player(Elementos_jugador &aux);
 	void SetMonedas(int cantMonedas);
 	void SumarMonedas(int cantMonedas);
 	void setNivel(int x);

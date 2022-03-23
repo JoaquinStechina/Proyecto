@@ -35,6 +35,13 @@ void Menu_Nuevo_Juego::Actualizar (RenderWindow & ventana, Juego & j) {
 		}
 		if ( cont_pos == 1){
 			Selector1.Cambiar_Pos(400,260);
+			if(Keyboard::isKeyPressed(Keyboard::Space)){
+				az = save.getStruct();
+				Player aux_player(az);
+				j.Cambiar_Escena(new Menu_mapa(aux_player));
+				s_sonido_enter.play();
+				reloj.restart();
+			}
 		}
 	}	
 }

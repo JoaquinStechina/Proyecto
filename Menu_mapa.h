@@ -10,6 +10,8 @@
 #include "Opcion_de_menu.h"
 #include "Player.h"
 #include "Opcion_de_mapa.h"
+#include "guardado.h"
+
 using namespace std;
 
 class Menu_mapa : public Escena {
@@ -43,6 +45,7 @@ class Menu_mapa : public Escena {
 	
 	//Personaje;
 	Player personaje;
+	
 public:
 	Menu_mapa(Player &Personaje);
 	Menu_mapa(Player &Personaje, list<Filas_De_Nodos> vector_de_filas, int columna_actual);
