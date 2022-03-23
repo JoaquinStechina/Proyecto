@@ -36,6 +36,7 @@ guardado::guardado(Player &Personaje) {
 			ab.item3.Bufo   = x.getBufo();
 			strcpy(ab.item3.Nombre, x.getNombre().c_str());
 		}
+		contador++;
 	}
 	
 	ab.monedas      = Personaje.GetMonedas();
