@@ -20,6 +20,11 @@ Filas_De_Nodos::Filas_De_Nodos (int valor_nodo) {
 	v_nodos.push_back(aux_nodo);
 }
 
+Filas_De_Nodos::Filas_De_Nodos(list<Nodos> v_aux,int t){
+	Tamanio_fila_nodo = t;
+	v_nodos = v_aux;
+}
+
 void Filas_De_Nodos::Ver_Valor_Nodos ( ) {
 	cout << v_nodos.size() << endl;
 	for(Nodos &x : v_nodos) {
@@ -68,4 +73,8 @@ void Filas_De_Nodos::Set_Sprite_nodos (Texture &t_mercado, Texture &t_campfire, 
 		}
 		
 	}
+}
+
+list<Nodos> Filas_De_Nodos::getLista(){
+	return v_nodos;
 }

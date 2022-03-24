@@ -12,10 +12,12 @@ public:
 	Filas_De_Nodos();
 	Filas_De_Nodos(bool random);
 	Filas_De_Nodos(int valor_nodo);
+	Filas_De_Nodos(list<Nodos> v_aux,int t);
 	int Ver_Cantidad_Nodos();
 	void Posicionar_Nodos(float pos_x);
 	void Set_Sprite_nodos(Texture &t_mercado, Texture &t_campfire, Texture &t_loot, Texture &t_start, Texture &t_boss, Texture &t_encuentro);
 	void Ver_Valor_Nodos();
+	list<Nodos> getLista();
 	void Dibujar(RenderWindow &ventana);
 };
 

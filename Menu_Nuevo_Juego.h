@@ -19,6 +19,9 @@ class Menu_Nuevo_Juego : public Escena {
 	Selector_de_menu Selector1;
 	cargado save;
 	Elementos_jugador az;
+	Elementos_mapa ay;
+	list<Filas_De_Nodos> aux_v;
+	list<Nodos> aux_n;
 public:
 	Menu_Nuevo_Juego();
 	void Actualizar (RenderWindow & ventana, Juego & j);

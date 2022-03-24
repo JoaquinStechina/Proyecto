@@ -18,4 +18,18 @@ struct Elementos_jugador{
 	Elementos_inventario item1, item2, item3;
 };
 
+struct Elementos_Nodos{
+	int tipo_de_nodo;
+};
+
+struct Elementos_Filas_De_Nodos{
+	int tamanio_fila_nodo;
+	Elementos_Nodos aux_nod[3];
+};
+
+struct Elementos_mapa{
+	Elementos_Filas_De_Nodos aux_filas_nodos[8];
+	int c_a_f;
+};
+
 #endif

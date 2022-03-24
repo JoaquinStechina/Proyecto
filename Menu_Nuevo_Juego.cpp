@@ -36,9 +36,28 @@ void Menu_Nuevo_Juego::Actualizar (RenderWindow & ventana, Juego & j) {
 		if ( cont_pos == 1){
 			Selector1.Cambiar_Pos(400,260);
 			if(Keyboard::isKeyPressed(Keyboard::Space)){
-				az = save.getStruct();
+				az = save.getStructJugador();
+				ay = save.getStructMapa();
 				Player aux_player(az);
-				j.Cambiar_Escena(new Menu_mapa(aux_player));
+				if(!aux_v.empty()){  //Si no esta vacio se vacia;
+					aux_v.erase(aux_v.begin(), aux_v.end());
+				}
+				for(int i=0;i<8;i++) { 
+					cout<<i<<" ";
+					if(!aux_n.empty()){  //Si no esta vacio se vacia;
+						aux_n.erase(aux_n.begin(), aux_n.end());
+					}
+					for(int j=0;j<ay.aux_filas_nodos[i].tamanio_fila_nodo;j++) {
+						Nodos otro_aux(ay.aux_filas_nodos[i].aux_nod[j].tipo_de_nodo);
+						aux_n.push_back(otro_aux);
+						cout<<j<<" ";
+					}
+					
+					Filas_De_Nodos otro_aux2(aux_n,ay.aux_filas_nodos[i].tamanio_fila_nodo);
+					aux_v.push_back(otro_aux2);
+					cout<<endl;
+				}
+				j.Cambiar_Escena(new Menu_mapa(aux_player,aux_v,ay.c_a_f));
 				s_sonido_enter.play();
 				reloj.restart();
 			}

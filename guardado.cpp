@@ -3,7 +3,7 @@
 using namespace std;
 
 
-guardado::guardado(Player &Personaje) {
+guardado::guardado(Player &Personaje, list<Filas_De_Nodos> v, int columna_actual_flecha) {
 	
 	list<Objeto> inv = Personaje.Obtener_Inventario();
 	
@@ -51,7 +51,25 @@ guardado::guardado(Player &Personaje) {
 	ab.vida_actual  = Personaje.getVida_Actual();
 	ab.mana_actual  = Personaje.getMana_Actual();
 	
-	ofstream partida("SAVE.zzz",ios::binary);
-	partida.write(reinterpret_cast<char*>(&ab),sizeof(ab));
-	partida.close();
+	ofstream jugador("SAVE.zzz",ios::binary);
+	jugador.write(reinterpret_cast<char*>(&ab),sizeof(ab));
+	jugador.close();
+	
+	int cont1 = 0, cont2 = 0;
+	mapa.c_a_f = columna_actual_flecha;
+	for(auto &x: v){
+		cont2 = 0;
+		mapa.aux_filas_nodos[cont1].tamanio_fila_nodo = x.Ver_Cantidad_Nodos();
+		for(auto &y: x.getLista()){
+			mapa.aux_filas_nodos[cont1].aux_nod[cont2].tipo_de_nodo = y.Ver_Valor_Nodo();
+			cont2++;
+		}
+		cont1++;
+		
+		cout<<"FILA "<<cont1<<" "<<"NODO "<<cont2<<endl;
+	}
+	
+	ofstream mapa_nodos("SAVE2.zzz",ios::binary);
+	mapa_nodos.write(reinterpret_cast<char*>(&mapa),sizeof(mapa));
+	mapa_nodos.close();
 }

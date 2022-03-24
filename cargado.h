@@ -4,10 +4,12 @@
 
 class cargado {
 private:
-	Elementos_jugador cb;
+	Elementos_jugador jugador_struct;
+	Elementos_mapa mapa_struct;
 public:
 	cargado();
-	Elementos_jugador getStruct();
+	Elementos_jugador getStructJugador();
+	Elementos_mapa getStructMapa();
 };
 
 #endif
