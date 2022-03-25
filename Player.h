@@ -11,7 +11,7 @@ using namespace std;
 
 class Player : public Stats, public Lista_de_objetos{
 	int nivel, exp, umbral_exp, monedas;
-	list<Objeto> Inventario;
+	list<Objeto> Inventario_Jugador;
 public:
 	Player();
 	Player(Elementos_jugador &aux);

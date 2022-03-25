@@ -115,6 +115,9 @@ Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.j
 	//Boton guardar partida;
 	guardar_partida.Cambiar_Pos_Opcion_Menu(200,540);
 	guardar_partida.Cambiar_Pos_Cuadro_Menu(200,550);
+	
+	if(asdf.objetos_del_juego.empty()){cout<<"Stock vacio!!"<<endl;}
+	else{cout<<"Stock lleno!!"<<endl;}
 }
 
 void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
@@ -127,7 +130,7 @@ void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 		s_sonido_enter.play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::T)){
-		j.Cambiar_Escena(new Menu_Tienda(personaje, V_Filas, columna_actual_flecha));
+		j.Cambiar_Escena(new Menu_Tienda(personaje, V_Filas, columna_actual_flecha, asdf));
 		s_sonido_enter.play();
 	}
 	if(Keyboard::isKeyPressed(Keyboard::G)){
@@ -248,5 +251,8 @@ Menu_mapa::Menu_mapa (Player & Personaje, list<Filas_De_Nodos> vector_de_filas, 
 	//Boton guardar partida;
 	guardar_partida.Cambiar_Pos_Opcion_Menu(200,540);
 	guardar_partida.Cambiar_Pos_Cuadro_Menu(200,550);
+	
+	if(asdf.objetos_del_juego.empty()){cout<<"Stock vacio!!"<<endl;}
+	else{cout<<"Stock lleno!!"<<endl;}
 }
 

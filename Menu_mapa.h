@@ -11,6 +11,7 @@
 #include "Player.h"
 #include "Opcion_de_mapa.h"
 #include "guardado.h"
+#include "Lista_de_objetos.h"
 
 using namespace std;
 
@@ -25,6 +26,9 @@ class Menu_mapa : public Escena {
 	//Sonidos
 	SoundBuffer sb_buffer_enter;
 	Sound s_sonido_enter;
+	
+	//prueba
+	Lista_de_objetos asdf;
 	
 	//Fondo
 	RectangleShape Fondo_Base;

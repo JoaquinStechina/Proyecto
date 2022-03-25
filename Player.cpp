@@ -20,9 +20,9 @@ Player::Player() {
 	int contadorcito = 0;
 	for (Objeto &x : objetos_del_juego){
 		contadorcito++;	
-		if (contadorcito == 1){Inventario.push_back(x); }
-		if (contadorcito == 2){Inventario.push_back(x); }
-		if (contadorcito == 3){Inventario.push_back(x); }
+		if (contadorcito == 1){Inventario_Jugador.push_back(x); }
+		if (contadorcito == 2){Inventario_Jugador.push_back(x); }
+		if (contadorcito == 3){Inventario_Jugador.push_back(x); }
 	}
 }
 
@@ -67,7 +67,7 @@ Player::Player(Elementos_jugador &aux){
 	this->SetMonedas(aux.monedas);
 	this->setNivel(aux.nivel);
 	
-	Inventario = aux_i;
+	Inventario_Jugador = aux_i;
 }
 
 void Player::SetMonedas (int cantMonedas) {
@@ -92,11 +92,11 @@ int Player::getNivel ( ) {
 
 
 list<Objeto> Player::Obtener_Inventario ( ) {
-	return Inventario;
+	return Inventario_Jugador;
 }
 
 
 void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
-	Inventario = nuevo_inventario;
+	Inventario_Jugador = nuevo_inventario;
 }
 

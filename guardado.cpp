@@ -51,9 +51,9 @@ guardado::guardado(Player &Personaje, list<Filas_De_Nodos> v, int columna_actual
 	ab.vida_actual  = Personaje.getVida_Actual();
 	ab.mana_actual  = Personaje.getMana_Actual();
 	
-	ofstream jugador("SAVE.zzz",ios::binary);
-	jugador.write(reinterpret_cast<char*>(&ab),sizeof(ab));
-	jugador.close();
+	ofstream jugador_guardar("SAVE.zzz",ios::binary);
+	jugador_guardar.write(reinterpret_cast<char*>(&ab),sizeof(ab));
+	jugador_guardar.close();
 	
 	int cont1 = 0, cont2 = 0;
 	mapa.c_a_f = columna_actual_flecha;

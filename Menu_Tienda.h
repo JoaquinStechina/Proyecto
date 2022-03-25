@@ -7,10 +7,7 @@
 #include "Fondo.h"
 #include "Selector_de_menu.h"
 #include "Player.h"
-#include <list>
 #include "Filas_De_Nodos.h"
-#include "Lista_de_objetos.h"
-#include "Objeto.h"
 #include "Opcion_De_Tienda.h"
 #include "Opcion_de_mapa.h"
 using namespace std;
@@ -39,7 +36,7 @@ class Menu_Tienda : public Escena, public Lista_de_objetos {
 	//Tienda;
 	list<Objeto> stock;
 public:
-	Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int pos_selector);
+	Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int pos_selector, Lista_de_objetos listita);
 	void Actualizar(RenderWindow &ventana, Juego &j) override;
 	void Dibujar(RenderWindow &ventana) override;
 };

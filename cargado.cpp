@@ -1,13 +1,13 @@
 #include "cargado.h"
 
 cargado::cargado(){
-	ifstream jugador("SAVE.zzz",ios::binary|ios::in);
-	jugador.read(reinterpret_cast<char*>(&jugador_struct),sizeof(jugador_struct));
-	jugador.close();
+	ifstream jugador_cargar("SAVE.zzz",ios::binary|ios::in);
+	jugador_cargar.read(reinterpret_cast<char*>(&jugador_struct),sizeof(jugador_struct));
+	jugador_cargar.close();
 	
-	ifstream mapa("SAVE2.zzz",ios::binary|ios::in);
-	mapa.read(reinterpret_cast<char*>(&mapa_struct),sizeof(mapa_struct));
-	mapa.close();
+	ifstream mapa_cargar("SAVE2.zzz",ios::binary|ios::in);
+	mapa_cargar.read(reinterpret_cast<char*>(&mapa_struct),sizeof(mapa_struct));
+	mapa_cargar.close();
 }
 
 Elementos_jugador cargado::getStructJugador(){
