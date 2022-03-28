@@ -27,7 +27,6 @@ class Player : public Stats, public Lista_de_objetos{
 	
 	//Variables
 	bool movimiento;
-	int contador;
 	int nivel, exp, umbral_exp, monedas;
 	list<Objeto> Inventario_Jugador;
 public:

@@ -13,7 +13,7 @@ using namespace std;
 
 class Menu_Principal : public Escena{
 	//temporal, solo para ver que funcionen ciertas cosas, eliminar mas tarde;
-	Player rockermen;
+	Player* rockermen = new Player;
 	
 	//Menu
 	SoundBuffer sb_buffer;

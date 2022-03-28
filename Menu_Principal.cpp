@@ -52,7 +52,7 @@ void Menu_Principal::Actualizar (RenderWindow &ventana, Juego &j) {
 		if ( cont_pos == 2){
 			Selector1.Cambiar_Pos(400,360);
 			if (Keyboard::isKeyPressed(Keyboard::Space)){
-				j.Cambiar_Escena(new Menu_mapa(rockermen));
+				j.Cambiar_Escena(new Menu_mapa(*rockermen));
 				s_sonido_enter.play();
 				reloj.restart();
 			}

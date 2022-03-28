@@ -15,7 +15,7 @@ void Player::inicSprite(){
 	this->cuadroActual = IntRect(0,0,55,37);
 	
 	this->sprite_jugador.setTextureRect(this->cuadroActual);
-	this->sprite_jugador.setScale(2.f,2.f);
+	this->sprite_jugador.setScale(3.f,3.f);
 }
 
 void Player::inicAnimacion(){
@@ -57,9 +57,11 @@ Player::Player(Elementos_jugador &aux){
 	this->inicSprite();
 	this->inicAnimacion();
 	
+	//Inicializado de variables auxiliares
 	list<Objeto> aux_i;
 	Objeto a1,a2,a3;
 	
+	//Cargado de los objetos
 	a1.setBufo(aux.item1.Bufo);
 	a1.setNombre(aux.item1.Nombre);
 	a1.setPrecio(aux.item1.Precio);
@@ -84,6 +86,7 @@ Player::Player(Elementos_jugador &aux){
 	a3.setTipo(aux.item3.Tipo);
 	aux_i.push_back(a3);
 	
+	//Cargado de las estadisticas
 	this->setConstitucion(aux.constitucion);
 	this->setFuerza(aux.fuerza);
 	this->setDestreza(aux.destreza);
@@ -96,6 +99,7 @@ Player::Player(Elementos_jugador &aux){
 	this->SetMonedas(aux.monedas);
 	this->setNivel(aux.nivel);
 	
+	//Cargado del inventario
 	this->Inventario_Jugador = aux_i;
 }
 
@@ -132,11 +136,11 @@ void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
 }
 
 void Player::actualizarMovimiento(){
-	if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.2f){
+	if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.15f){
 		
-		this->cuadroActual.left += 37;
+		this->cuadroActual.left += 50;
 		
-		if(this->cuadroActual.left >= 148)
+		if(this->cuadroActual.left >= 165)
 			this->cuadroActual.left = 0;
 		
 		this->relojAnimacion.restart();
