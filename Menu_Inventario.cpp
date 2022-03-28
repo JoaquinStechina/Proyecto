@@ -17,7 +17,7 @@ Menu_Inventario::Menu_Inventario(Player &Jugador, list<Filas_De_Nodos> vector_fi
 	v_de_filas = vector_filas;
 	p_del_selector = pos_selector;
 	personaje_aux = Jugador;
-	inv_aux = Jugador.Obtener_Inventario();
+	inv_aux = Jugador.getInventario();
 	
 	//Pongo los objetos en su lugar
 	int contador = 0;

@@ -7,6 +7,7 @@
 #include "Lista_de_objetos.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "Elementos.h"
+#include "Juego.h"
 using namespace std;
 
 class Player : public Stats, public Lista_de_objetos{
@@ -30,16 +31,20 @@ public:
 	Player(Elementos_jugador &aux);
 	virtual ~Player();
 	
-	//Funciones
-	
-	void SetMonedas(int cantMonedas);
-	void SumarMonedas(int cantMonedas);
-	void setNivel(int x);
+	//Getters
 	int getNivel();
 	int GetMonedas();
-	list<Objeto> Obtener_Inventario();
+	list<Objeto> getInventario();
+	
+	//Setters
+	void setNivel(int x);
+	void SetMonedas(int cantMonedas);
 	void Set_Inventario( list<Objeto> nuevo_inventario );
+	
+	//Funciones
+	void SumarMonedas(int cantMonedas);
 	void actualizarMovimiento();
+	void Actualizar (RenderWindow & ventana, Juego & j);
 };
 
 #endif

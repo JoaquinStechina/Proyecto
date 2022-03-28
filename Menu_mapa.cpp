@@ -125,6 +125,10 @@ void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 		j.Cambiar_Escena(new Menu_Principal);
 		s_sonido_enter.play();
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Space)){
+		j.Cambiar_Escena(new Escena_batalla(personaje));
+		s_sonido_enter.play();
+	}
 	if (Keyboard::isKeyPressed(Keyboard::I)){
 		j.Cambiar_Escena(new Menu_Inventario(personaje, V_Filas, columna_actual_flecha));
 		s_sonido_enter.play();

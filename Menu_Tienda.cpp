@@ -14,7 +14,7 @@ Menu_Tienda::Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int
 	v_de_filas = vector_filas;
 	p_del_selector = pos_selector;
 	personaje_aux = Jugador;
-	inv_aux = Jugador.Obtener_Inventario();
+	inv_aux = Jugador.getInventario();
 	
 	//Creo la lista de objetos que estan a la venta
 	int objeto1, objeto2, objeto3, contadorcito;

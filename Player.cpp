@@ -18,6 +18,10 @@ void Player::inicSprite(){
 	this->sprite_jugador.setScale(2.f,2.f);
 }
 
+void Player::inicAnimacion(){
+	
+}
+
 Player::Player() {
 	//Inicializacion
 	inicTextura();
@@ -116,7 +120,7 @@ int Player::getNivel ( ) {
 }
 
 
-list<Objeto> Player::Obtener_Inventario ( ) {
+list<Objeto> Player::getInventario ( ) {
 	return this->Inventario_Jugador;
 }
 

@@ -5,7 +5,7 @@ using namespace std;
 
 guardado::guardado(Player &Personaje, list<Filas_De_Nodos> v, int columna_actual_flecha) {
 	
-	list<Objeto> inv = Personaje.Obtener_Inventario();
+	list<Objeto> inv = Personaje.getInventario();
 	
 	int contador = 0;
 	for(Objeto &x : inv){

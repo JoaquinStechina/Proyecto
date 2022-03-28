@@ -12,6 +12,7 @@
 #include "Opcion_de_mapa.h"
 #include "guardado.h"
 #include "Lista_de_objetos.h"
+#include "Escena_batalla.h"
 
 using namespace std;
 
