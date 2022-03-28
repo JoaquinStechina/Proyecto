@@ -1,0 +1,2 @@
+ancho: 55p
+altura: 37p

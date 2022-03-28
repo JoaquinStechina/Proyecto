@@ -2,7 +2,27 @@
 #include <iostream>
 using namespace std;
 
+void Player::inicTextura(){
+	if(!this->textura_jugador.loadFromFile("Imagenes/Sprites/jugador.png"))
+		cout<<"No se pudo cargar la textura del jugador"<<endl;
+	else
+		cout<<"Se cargo la textura del jugador"<<endl;
+}
+
+void Player::inicSprite(){
+	
+	this->sprite_jugador.setTexture(this->textura_jugador);
+	this->cuadroActual = IntRect(0,0,55,37);
+	
+	this->sprite_jugador.setTextureRect(this->cuadroActual);
+	this->sprite_jugador.setScale(2.f,2.f);
+}
+
 Player::Player() {
+	//Inicializacion
+	inicTextura();
+	inicSprite();
+	
 	//Set Unidades por defecto;
 	monedas = 50;
 	this->setConstitucion(5);
@@ -27,6 +47,9 @@ Player::Player() {
 }
 
 Player::Player(Elementos_jugador &aux){
+	//Inicializacion
+	inicTextura();
+	inicSprite();
 	
 	list<Objeto> aux_i;
 	Objeto a1,a2,a3;
@@ -67,36 +90,41 @@ Player::Player(Elementos_jugador &aux){
 	this->SetMonedas(aux.monedas);
 	this->setNivel(aux.nivel);
 	
-	Inventario_Jugador = aux_i;
+	this->Inventario_Jugador = aux_i;
 }
 
+Player::~Player(){}
+
 void Player::SetMonedas (int cantMonedas) {
-	monedas = cantMonedas;
+	this->monedas = cantMonedas;
 }
 
 int Player::GetMonedas ( ) {
-	return monedas;
+	return this->monedas;
 }
 
 void Player::SumarMonedas (int cantMonedas) {
-	monedas = monedas + cantMonedas;
+	this->monedas += cantMonedas;
 }
 
 void Player::setNivel (int x) {
-	nivel = x;
+	this->nivel = x;
 }
 
 int Player::getNivel ( ) {
-	return nivel;
+	return this->nivel;
 }
 
 
 list<Objeto> Player::Obtener_Inventario ( ) {
-	return Inventario_Jugador;
+	return this->Inventario_Jugador;
 }
 
 
 void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
-	Inventario_Jugador = nuevo_inventario;
+	this->Inventario_Jugador = nuevo_inventario;
 }
 
+void Player::actualizarMovimiento(){
+
+}

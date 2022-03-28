@@ -27,7 +27,7 @@ class Menu_mapa : public Escena {
 	SoundBuffer sb_buffer_enter;
 	Sound s_sonido_enter;
 	
-	//prueba
+	//Lista de objetos
 	Lista_de_objetos asdf;
 	
 	//Fondo
