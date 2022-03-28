@@ -19,16 +19,17 @@ void Player::inicSprite(){
 }
 
 void Player::inicAnimacion(){
-	
+	this->relojAnimacion.restart();
 }
 
 Player::Player() {
 	//Inicializacion
-	inicTextura();
-	inicSprite();
+	this->inicTextura();
+	this->inicSprite();
+	this->inicAnimacion();
 	
 	//Set Unidades por defecto;
-	monedas = 50;
+	this->monedas = 50;
 	this->setConstitucion(5);
 	this->setFuerza(5);
 	this->setDestreza(5);
@@ -52,8 +53,9 @@ Player::Player() {
 
 Player::Player(Elementos_jugador &aux){
 	//Inicializacion
-	inicTextura();
-	inicSprite();
+	this->inicTextura();
+	this->inicSprite();
+	this->inicAnimacion();
 	
 	list<Objeto> aux_i;
 	Objeto a1,a2,a3;
@@ -130,5 +132,23 @@ void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
 }
 
 void Player::actualizarMovimiento(){
+	if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.2f){
+		
+		this->cuadroActual.left += 37;
+		
+		if(this->cuadroActual.left >= 148)
+			this->cuadroActual.left = 0;
+		
+		this->relojAnimacion.restart();
+		this->sprite_jugador.setTextureRect(this->cuadroActual);
+		
+	}
+}
 
+void Player::Actualizar(){
+	this->actualizarMovimiento();
+}
+
+void Player::Dibujar (RenderWindow & ventana){
+	ventana.draw(this->sprite_jugador);
 }

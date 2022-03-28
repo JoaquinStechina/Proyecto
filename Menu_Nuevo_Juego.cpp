@@ -38,7 +38,7 @@ void Menu_Nuevo_Juego::Actualizar (RenderWindow & ventana, Juego & j) {
 			if(Keyboard::isKeyPressed(Keyboard::Space)){
 				az = save.getStructJugador();
 				ay = save.getStructMapa();
-				Player aux_player(az);
+				Player* aux_player = new Player(az);
 				if(!aux_v.empty()){  //Si no esta vacio se vacia;
 					aux_v.erase(aux_v.begin(), aux_v.end());
 				}
@@ -57,7 +57,7 @@ void Menu_Nuevo_Juego::Actualizar (RenderWindow & ventana, Juego & j) {
 					aux_v.push_back(otro_aux2);
 					cout<<endl;
 				}
-				j.Cambiar_Escena(new Menu_mapa(aux_player,aux_v,ay.c_a_f));
+				j.Cambiar_Escena(new Menu_mapa(*aux_player,aux_v,ay.c_a_f));
 				s_sonido_enter.play();
 				reloj.restart();
 			}

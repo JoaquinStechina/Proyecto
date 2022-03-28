@@ -17,7 +17,7 @@
 using namespace sf;
 
 class Menu_Nueva_Partida : public Escena {
-	Player player;
+	Player *player = new Player;
 	Bloque_Sprite arreglo_cuadros[5];
 	Bloque_Sprite Cuadro1, Cuadro2, Cuadro3;
 	Clock reloj;

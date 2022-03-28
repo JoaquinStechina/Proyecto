@@ -57,19 +57,19 @@ Menu_Nueva_Partida::Menu_Nueva_Partida() : fondo("Imagenes/Fondos/fondo2_1.png")
 	for(int i=0;i<5;i++) { 
 		switch(i){
 		case 0:
-			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getConstitucion());
+			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getConstitucion());
 			break;
 		case 1:
-			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getFuerza());
+			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getFuerza());
 			break;
 		case 2:
-			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getDestreza());
+			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getDestreza());
 			break;
 		case 3:
-			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getInteligencia());
+			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getInteligencia());
 			break;
 		case 4:
-			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getSuerte());
+			arreglo_cuadros[i].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getSuerte());
 			break;
 		default:
 			break;
@@ -95,20 +95,20 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 		if(cont_pos == 0){
 			Selector1.Cambiar_Pos(340,210);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
-				if(player.getConstitucion() > 1){
-					player.setConstitucion(player.getConstitucion()-1);
+				if(player->getConstitucion() > 1){
+					player->setConstitucion(player->getConstitucion()-1);
 					puntos_disponibles += 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getConstitucion());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getConstitucion());
 					reloj.restart();
 				}
 			}
 			if(Keyboard::isKeyPressed(Keyboard::Right)){
 				if(puntos_disponibles > 0){
-					player.setConstitucion(player.getConstitucion()+1);
+					player->setConstitucion(player->getConstitucion()+1);
 					puntos_disponibles -= 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getConstitucion());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getConstitucion());
 					reloj.restart();
 				}
 			}
@@ -116,20 +116,20 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 		if(cont_pos == 1){
 			Selector1.Cambiar_Pos(340,280);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
-				if(player.getFuerza() > 1){
-					player.setFuerza(player.getFuerza()-1);
+				if(player->getFuerza() > 1){
+					player->setFuerza(player->getFuerza()-1);
 					puntos_disponibles += 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getFuerza());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getFuerza());
 					reloj.restart();
 				}
 			}
 			if(Keyboard::isKeyPressed(Keyboard::Right)){
 				if(puntos_disponibles > 0){
-					player.setFuerza(player.getFuerza()+1);
+					player->setFuerza(player->getFuerza()+1);
 					puntos_disponibles -= 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getFuerza());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getFuerza());
 					reloj.restart();
 				}
 			}
@@ -137,20 +137,20 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 		if(cont_pos == 2){
 			Selector1.Cambiar_Pos(340,350);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
-				if(player.getDestreza() > 1){
-					player.setDestreza(player.getDestreza()-1);
+				if(player->getDestreza() > 1){
+					player->setDestreza(player->getDestreza()-1);
 					puntos_disponibles += 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getDestreza());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getDestreza());
 					reloj.restart();
 				}
 			}
 			if(Keyboard::isKeyPressed(Keyboard::Right)){
 				if(puntos_disponibles > 0){
-					player.setDestreza(player.getDestreza()+1);
+					player->setDestreza(player->getDestreza()+1);
 					puntos_disponibles -= 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getDestreza());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getDestreza());
 					reloj.restart();
 				}
 			}
@@ -158,20 +158,20 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 		if(cont_pos == 3){
 			Selector1.Cambiar_Pos(340,420);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
-				if(player.getInteligencia() > 1){
-					player.setInteligencia(player.getInteligencia()-1);
+				if(player->getInteligencia() > 1){
+					player->setInteligencia(player->getInteligencia()-1);
 					puntos_disponibles += 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getInteligencia());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getInteligencia());
 					reloj.restart();
 				}
 			}
 			if(Keyboard::isKeyPressed(Keyboard::Right)){
 				if(puntos_disponibles > 0){
-					player.setInteligencia(player.getInteligencia()+1);
+					player->setInteligencia(player->getInteligencia()+1);
 					puntos_disponibles -= 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getInteligencia());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getInteligencia());
 					reloj.restart();
 				}
 			}
@@ -179,20 +179,20 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 		if(cont_pos == 4){
 			Selector1.Cambiar_Pos(340,490);
 			if(Keyboard::isKeyPressed(Keyboard::Left)){
-				if(player.getSuerte() > 1){
-					player.setSuerte(player.getSuerte()-1);
+				if(player->getSuerte() > 1){
+					player->setSuerte(player->getSuerte()-1);
 					puntos_disponibles += 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getSuerte());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getSuerte());
 					reloj.restart();
 				}
 			}
 			if(Keyboard::isKeyPressed(Keyboard::Right)){
 				if(puntos_disponibles > 0){
-					player.setSuerte(player.getSuerte()+1);
+					player->setSuerte(player->getSuerte()+1);
 					puntos_disponibles -= 1;
 					Cuadro2.setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",puntos_disponibles);
-					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player.getSuerte());
+					arreglo_cuadros[cont_pos].setBloque_Sprite("Imagenes/Sprites/bloquesito_steel.png",player->getSuerte());
 					reloj.restart();
 				}
 			}
@@ -200,7 +200,7 @@ void Menu_Nueva_Partida::Actualizar (RenderWindow & ventana, Juego & j) {
 		if(cont_pos == 5){
 			Selector1.Cambiar_Pos(435,560);
 			if(Keyboard::isKeyPressed(Keyboard::Space)){
-				j.Cambiar_Escena(new Menu_mapa(player));
+				j.Cambiar_Escena(new Menu_mapa(*player));
 				s_sonido_enter.play();
 				reloj.restart();
 			}

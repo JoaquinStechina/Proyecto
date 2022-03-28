@@ -9,9 +9,10 @@ Escena_batalla::~Escena_batalla() {
 }
 
 void Escena_batalla::Actualizar(RenderWindow & ventana, Juego & j){
-	
+	this->jugador.Actualizar();
 }
 
 void Escena_batalla::Dibujar(RenderWindow & ventana){
-	fondo.Dibujar(ventana);
+	this->fondo.Dibujar(ventana);
+	this->jugador.Dibujar(ventana);
 }

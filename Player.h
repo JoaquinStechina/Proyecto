@@ -6,6 +6,7 @@
 #include "Objeto.h"
 #include "Lista_de_objetos.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Clock.hpp>
 #include "Elementos.h"
 #include "Juego.h"
 using namespace std;
@@ -22,8 +23,11 @@ class Player : public Stats, public Lista_de_objetos{
 	
 	//Animacion
 	IntRect cuadroActual;
+	Clock relojAnimacion;
 	
-	
+	//Variables
+	bool movimiento;
+	int contador;
 	int nivel, exp, umbral_exp, monedas;
 	list<Objeto> Inventario_Jugador;
 public:
@@ -44,7 +48,8 @@ public:
 	//Funciones
 	void SumarMonedas(int cantMonedas);
 	void actualizarMovimiento();
-	void Actualizar (RenderWindow & ventana, Juego & j);
+	void Actualizar();
+	void Dibujar (RenderWindow & ventana);
 };
 
 #endif
