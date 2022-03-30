@@ -9,24 +9,24 @@
 #include <SFML/System/Clock.hpp>
 #include "Elementos.h"
 #include "Juego.h"
+#include "Sprites.h"
 using namespace std;
 
-class Player : public Stats, public Lista_de_objetos{
-	//Dibujo
-	Texture textura_jugador;
-	Sprite sprite_jugador;
-	
+enum ESTADOS_ANIMACION_JUGADOR{QUIETO = 0, ATACANDO};
+
+class Player : public Stats, public Lista_de_objetos, public Sprites{
 	//Inicializacion
+	void inicVariables();
 	void inicTextura();
 	void inicSprite();
 	void inicAnimacion();
 	
 	//Animacion
+	unsigned short animEstado;
 	IntRect cuadroActual;
 	Clock relojAnimacion;
 	
 	//Variables
-	bool movimiento;
 	int nivel, exp, umbral_exp, monedas;
 	list<Objeto> Inventario_Jugador;
 public:

@@ -222,3 +222,6 @@ void Menu_Nueva_Partida::Dibujar (RenderWindow & ventana) {
 	Cuadro3.Dibujar(ventana);
 }
 
+Menu_Nueva_Partida::~Menu_Nueva_Partida(){
+	delete player;
+}

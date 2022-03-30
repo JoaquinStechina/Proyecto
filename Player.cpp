@@ -2,8 +2,28 @@
 #include <iostream>
 using namespace std;
 
+void Player::inicVariables(){
+	//Animacion
+	this->animEstado = QUIETO;
+	
+	//Variables privadas
+	this->nivel = 0;
+	this->exp = 0;
+	this->umbral_exp = 100;
+	this->monedas = 50;
+	
+	//Inventario
+	int contadorcito = 0;
+	for (Objeto &x : objetos_del_juego){
+		contadorcito++;	
+		if (contadorcito == 1){Inventario_Jugador.push_back(x); }
+		if (contadorcito == 2){Inventario_Jugador.push_back(x); }
+		if (contadorcito == 3){Inventario_Jugador.push_back(x); }
+	}
+}
+
 void Player::inicTextura(){
-	if(!this->textura_jugador.loadFromFile("Imagenes/Sprites/jugador.png"))
+	if(!this->t_de_sprite.loadFromFile("Imagenes/Sprites/jugador.png"))
 		cout<<"No se pudo cargar la textura del jugador"<<endl;
 	else
 		cout<<"Se cargo la textura del jugador"<<endl;
@@ -11,11 +31,11 @@ void Player::inicTextura(){
 
 void Player::inicSprite(){
 	
-	this->sprite_jugador.setTexture(this->textura_jugador);
+	this->s_sprite.setTexture(this->t_de_sprite);
 	this->cuadroActual = IntRect(0,0,55,37);
 	
-	this->sprite_jugador.setTextureRect(this->cuadroActual);
-	this->sprite_jugador.setScale(3.f,3.f);
+	this->s_sprite.setTextureRect(this->cuadroActual);
+	this->s_sprite.setScale(3.f,3.f);
 }
 
 void Player::inicAnimacion(){
@@ -24,12 +44,12 @@ void Player::inicAnimacion(){
 
 Player::Player() {
 	//Inicializacion
+	this->inicVariables();
 	this->inicTextura();
 	this->inicSprite();
 	this->inicAnimacion();
 	
 	//Set Unidades por defecto;
-	this->monedas = 50;
 	this->setConstitucion(5);
 	this->setFuerza(5);
 	this->setDestreza(5);
@@ -39,16 +59,6 @@ Player::Player() {
 	this->setManaMax(this->getInteligencia() * 5);
 	this->setVida_Actual(this->getVidaMax());
 	this->setMana_Actual(this->getManaMax());
-	
-
-//	Inventario ficticio;
-	int contadorcito = 0;
-	for (Objeto &x : objetos_del_juego){
-		contadorcito++;	
-		if (contadorcito == 1){Inventario_Jugador.push_back(x); }
-		if (contadorcito == 2){Inventario_Jugador.push_back(x); }
-		if (contadorcito == 3){Inventario_Jugador.push_back(x); }
-	}
 }
 
 Player::Player(Elementos_jugador &aux){
@@ -136,17 +146,23 @@ void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
 }
 
 void Player::actualizarMovimiento(){
-	if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.15f){
-		
-		this->cuadroActual.left += 50;
-		
-		if(this->cuadroActual.left >= 165)
-			this->cuadroActual.left = 0;
-		
-		this->relojAnimacion.restart();
-		this->sprite_jugador.setTextureRect(this->cuadroActual);
+	if(this->animEstado == QUIETO){
+		if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.15f){
+			
+			this->cuadroActual.left += 50;
+			
+			if(this->cuadroActual.left >= 165)
+				this->cuadroActual.left = 0;
+			
+			this->relojAnimacion.restart();
+			this->s_sprite.setTextureRect(this->cuadroActual);
+		}
+	}
+	else if(this->animEstado == ATACANDO){
 		
 	}
+	else
+	   this->relojAnimacion.restart();
 }
 
 void Player::Actualizar(){
@@ -154,5 +170,5 @@ void Player::Actualizar(){
 }
 
 void Player::Dibujar (RenderWindow & ventana){
-	ventana.draw(this->sprite_jugador);
+	ventana.draw(this->s_sprite);
 }

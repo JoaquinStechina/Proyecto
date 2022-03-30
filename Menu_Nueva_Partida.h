@@ -32,6 +32,7 @@ public:
 	Menu_Nueva_Partida ();
 	void Actualizar    (RenderWindow & ventana, Juego & j);
 	void Dibujar       (RenderWindow & ventana);
+	~Menu_Nueva_Partida();
 };
 
 #endif
