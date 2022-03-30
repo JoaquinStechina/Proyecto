@@ -16,6 +16,10 @@ void Escena_batalla::inicOpciones(){
 			this->opciones[i].setOpcion("Magia",30);
 			break;
 		}
+		
+		opciones[i].Cambiar_Pos_Cuadro_Menu(this->x, this->y);
+		opciones[i].Cambiar_Pos_Opcion_Menu(this->x, this->y);
+		x += 280;
 	}
 }
 
@@ -35,4 +39,7 @@ void Escena_batalla::Actualizar(RenderWindow & ventana, Juego & j){
 void Escena_batalla::Dibujar(RenderWindow & ventana){
 	this->fondo.Dibujar(ventana);
 	this->jugador.Dibujar(ventana);
+	for(int i=0;i<4;i++) { 
+		opciones[i].Dibujar(ventana);
+	}
 }

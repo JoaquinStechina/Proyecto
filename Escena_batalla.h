@@ -13,8 +13,16 @@ private:
 	Fondo fondo;
 	Opcion_de_menu opciones[4];
 	
+	//Coordenadas
+	short x = 180;
+	short y = 550;
+	
 	//Inicializacion
 	void inicOpciones();
+	
+	//Sonido
+	SoundBuffer sb_buffer;
+	Sound s_sonido_enter;
 	
 	Player jugador;
 public:
