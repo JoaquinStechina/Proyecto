@@ -4,25 +4,32 @@
 #include "Fondo.h"
 #include "Juego.h"
 #include "Player.h"
+#include "Selector_de_menu.h"
 #include <vector>
 #include "Opcion_de_menu.h"
+#include <SFML/Audio/Sound.hpp>
+#include <SFML/Audio/SoundBuffer.hpp>
+#include <SFML/System/Clock.hpp>
 using namespace std;
 
 class Escena_batalla : public Escena{
 private:
 	Fondo fondo;
 	Opcion_de_menu opciones[4];
+	Selector_de_menu selector;
+	Clock reloj;
 	
 	//Coordenadas
-	short x = 180;
-	short y = 550;
+	short x;
+	short y;
 	
 	//Inicializacion
+	void inicSelector();
 	void inicOpciones();
 	
 	//Sonido
-	SoundBuffer sb_buffer;
-	Sound s_sonido_enter;
+//	SoundBuffer sb_buffer;
+//	Sound s_sonido_enter;
 	
 	Player jugador;
 public:

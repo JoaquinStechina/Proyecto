@@ -21,15 +21,15 @@ public:
 	Stats();
 	
 	//Getters
-	int getConstitucion();
-	int getFuerza      ();
-	int getDestreza    ();
-	int getInteligencia();
-	int getSuerte      ();
-	int getVidaMax     ();
-	int getManaMax     ();
-	int getVida_Actual ();
-	int getMana_Actual ();
+	const int getConstitucion();
+	const int getFuerza      ();
+	const int getDestreza    ();
+	const int getInteligencia();
+	const int getSuerte      ();
+	const int getVidaMax     ();
+	const int getManaMax     ();
+	const int getVida_Actual ();
+	const int getMana_Actual ();
 	
 	//Setters
 	void setConstitucion (int x);

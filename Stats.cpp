@@ -3,15 +3,15 @@
 Stats::Stats() {}
 
 //Getters
-int Stats::getConstitucion() {return a.Constitucion;}
-int Stats::getFuerza()       {return a.Fuerza;}
-int Stats::getDestreza()     {return a.Destreza;}
-int Stats::getInteligencia() {return a.Inteligencia;}
-int Stats::getSuerte()       {return a.Suerte;}
-int Stats::getVidaMax()      {return a.Vida;}
-int Stats::getManaMax()      {return a.Mana;}
-int Stats::getVida_Actual()  {return a.Vida_actual;}
-int Stats::getMana_Actual()  {return a.Mana_actual;}
+const int Stats::getConstitucion() {return a.Constitucion;}
+const int Stats::getFuerza()       {return a.Fuerza;}
+const int Stats::getDestreza()     {return a.Destreza;}
+const int Stats::getInteligencia() {return a.Inteligencia;}
+const int Stats::getSuerte()       {return a.Suerte;}
+const int Stats::getVidaMax()      {return a.Vida;}
+const int Stats::getManaMax()      {return a.Mana;}
+const int Stats::getVida_Actual()  {return a.Vida_actual;}
+const int Stats::getMana_Actual()  {return a.Mana_actual;}
 //Setters
 void Stats::setConstitucion (int x){a.Constitucion = x;}
 void Stats::setFuerza       (int x){a.Fuerza = x;}

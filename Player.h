@@ -35,9 +35,9 @@ public:
 	virtual ~Player();
 	
 	//Getters
-	int getNivel();
-	int GetMonedas();
-	list<Objeto> getInventario();
+	const int getNivel();
+	const int GetMonedas();
+	const list<Objeto> getInventario();
 	
 	//Setters
 	void setNivel(int x);
@@ -46,8 +46,8 @@ public:
 	
 	//Funciones
 	void SumarMonedas(int cantMonedas);
-	void actualizarMovimiento();
-	void Actualizar();
+	void actualizarMovimiento(char estado);
+	void Actualizar(char estado);
 	void Dibujar (RenderWindow & ventana);
 };
 

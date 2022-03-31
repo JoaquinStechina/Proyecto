@@ -35,6 +35,22 @@ int Selector_de_menu::Actualizar(RenderWindow &win) {
 			S_mover.play();
 			reloj.restart();
 		}
+		if (Keyboard::isKeyPressed(Keyboard::Right)){
+			cont_pos++;
+			if (cont_pos == cont_max){
+				cont_pos = 0;
+			} 
+			S_mover.play();
+			reloj.restart();
+		}
+		if (Keyboard::isKeyPressed(Keyboard::Left)){
+			cont_pos--;
+			if (cont_pos == -1){
+				cont_pos = cont_max-1;
+			}
+			S_mover.play();
+			reloj.restart();
+		}
 	}
 	return cont_pos;
 }
@@ -51,3 +67,6 @@ void Selector_de_menu::Cambiar_Pos (const float posx, const float posy) {
 	Circulo_sprite_selector.setPosition(posx,posy);
 }
 
+void Selector_de_menu::Rotar(float angulo){
+	Circulo_sprite_selector.setRotation(angulo);
+}

@@ -119,7 +119,7 @@ void Player::SetMonedas (int cantMonedas) {
 	this->monedas = cantMonedas;
 }
 
-int Player::GetMonedas ( ) {
+const int Player::GetMonedas ( ) {
 	return this->monedas;
 }
 
@@ -131,12 +131,12 @@ void Player::setNivel (int x) {
 	this->nivel = x;
 }
 
-int Player::getNivel ( ) {
+const int Player::getNivel ( ) {
 	return this->nivel;
 }
 
 
-list<Objeto> Player::getInventario ( ) {
+const list<Objeto> Player::getInventario ( ) {
 	return this->Inventario_Jugador;
 }
 
@@ -145,7 +145,8 @@ void Player::Set_Inventario (list<Objeto> nuevo_inventario) {
 	this->Inventario_Jugador = nuevo_inventario;
 }
 
-void Player::actualizarMovimiento(){
+void Player::actualizarMovimiento(char estado){
+	this->animEstado = estado;
 	if(this->animEstado == QUIETO){
 		if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.15f){
 			
@@ -159,14 +160,13 @@ void Player::actualizarMovimiento(){
 		}
 	}
 	else if(this->animEstado == ATACANDO){
-		
 	}
 	else
 	   this->relojAnimacion.restart();
 }
 
-void Player::Actualizar(){
-	this->actualizarMovimiento();
+void Player::Actualizar(char estado){
+	this->actualizarMovimiento(estado);
 }
 
 void Player::Dibujar (RenderWindow & ventana){
