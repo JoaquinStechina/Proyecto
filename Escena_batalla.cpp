@@ -1,5 +1,13 @@
 #include "Escena_batalla.h"
 
+void Escena_batalla::inicSelector(){
+	this->x = 180;
+	this->y = 490;
+	this->selector.Cambiar_Pos(this->x, this->y);
+	this->selector.Rotar(90);
+	this->selector.setCont_Max(4);
+}
+
 void Escena_batalla::inicOpciones(){
 	this->x = 180;
 	this->y = 550;
@@ -26,14 +34,6 @@ void Escena_batalla::inicOpciones(){
 	}
 }
 
-void Escena_batalla::inicSelector(){
-	this->x = 180;
-	this->y = 490;
-	this->selector.Cambiar_Pos(this->x, this->y);
-	this->selector.Rotar(90);
-	this->selector.setCont_Max(4);
-}
-
 Escena_batalla::Escena_batalla(Player& jugador): fondo("Imagenes/Fondos/FE-BG2.png"){
 	this->inicOpciones();
 	this->inicSelector();
@@ -46,14 +46,17 @@ Escena_batalla::~Escena_batalla() {
 
 void Escena_batalla::Actualizar(RenderWindow & ventana, Juego & j){
 	char cont_pos = selector.Actualizar(ventana);
-	this->jugador.Actualizar(cont_pos);
-	if (reloj.getElapsedTime().asSeconds() > 0.2){
+	if (reloj.getElapsedTime().asSeconds() > 0.2f){
 		if(cont_pos == 0){
 			selector.Cambiar_Pos(this->x,this->y);
+			if(Keyboard::isKeyPressed(Keyboard::Space)){
+			}
 			reloj.restart();
 		}
 		if(cont_pos == 1){
 			selector.Cambiar_Pos(this->x+280,this->y);
+			if(Keyboard::isKeyPressed(Keyboard::Space)){
+			}
 			reloj.restart();
 		}
 		if(cont_pos == 2){
@@ -64,6 +67,7 @@ void Escena_batalla::Actualizar(RenderWindow & ventana, Juego & j){
 			selector.Cambiar_Pos(this->x+(280*3),this->y);
 			reloj.restart();
 		}
+		jugador.Actualizar(0);
 	}
 }
 

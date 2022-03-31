@@ -32,7 +32,7 @@ void Player::inicTextura(){
 void Player::inicSprite(){
 	
 	this->s_sprite.setTexture(this->t_de_sprite);
-	this->cuadroActual = IntRect(0,0,55,37);
+	this->cuadroActual = IntRect(0,0,50,37);
 	
 	this->s_sprite.setTextureRect(this->cuadroActual);
 	this->s_sprite.setScale(3.f,3.f);
@@ -149,17 +149,28 @@ void Player::actualizarMovimiento(char estado){
 	this->animEstado = estado;
 	if(this->animEstado == QUIETO){
 		if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.15f){
-			
+			this->cuadroActual.top = 0;
 			this->cuadroActual.left += 50;
 			
-			if(this->cuadroActual.left >= 165)
+			if(this->cuadroActual.left >= 200)
 				this->cuadroActual.left = 0;
 			
 			this->relojAnimacion.restart();
 			this->s_sprite.setTextureRect(this->cuadroActual);
 		}
 	}
-	else if(this->animEstado == ATACANDO){
+	if(this->animEstado == ATACANDO){
+		if(this->relojAnimacion.getElapsedTime().asSeconds() >= 0.15f){
+			
+			this->cuadroActual.top = 481;
+			this->cuadroActual.left += 50;
+			
+			if(this->cuadroActual.left >= 350){
+				this->cuadroActual.left = 0;
+			}
+			this->relojAnimacion.restart();
+			this->s_sprite.setTextureRect(this->cuadroActual);
+		}
 	}
 	else
 	   this->relojAnimacion.restart();

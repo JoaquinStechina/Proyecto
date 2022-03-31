@@ -27,10 +27,6 @@ private:
 	void inicSelector();
 	void inicOpciones();
 	
-	//Sonido
-//	SoundBuffer sb_buffer;
-//	Sound s_sonido_enter;
-	
 	Player jugador;
 public:
 	Escena_batalla(Player& jugador);
