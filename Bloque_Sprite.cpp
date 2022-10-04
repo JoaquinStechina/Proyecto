@@ -13,7 +13,11 @@ Bloque_Sprite::Bloque_Sprite(std::string nombre_textura) {
 	FloatRect a = s_sprite.getLocalBounds();
 	
 	//Para settear el origen es necesario pasarle float
+<<<<<<< HEAD
 	s_sprite.setOrigin(a.height/2,a.width/2);
+=======
+	s_sprite.setOrigin(a.width/2,a.height/2);
+>>>>>>> 28ece76b321902082f09f974b70b20f07fab9ab4
 	
 	//Suavizado del sprite
 	t_de_sprite.setSmooth(true);
@@ -30,16 +34,73 @@ Bloque_Sprite::Bloque_Sprite(std::string nombre_textura, std::string texto) {
 	this->texto.setString(texto);
 	this->texto.setFont(fuente);
 	FloatRect a = this->texto.getLocalBounds();
+<<<<<<< HEAD
 	this->texto.setOrigin(a.height/2,a.width/2);
 	
 	//Centrado del origen del sprite
 	FloatRect b = s_sprite.getLocalBounds();
 	s_sprite.setOrigin(b.height/2,b.width/2);
+=======
+	this->texto.setOrigin(a.width/2,a.height/2);
+	
+	//Centrado del origen del sprite
+	FloatRect b = s_sprite.getLocalBounds();
+	s_sprite.setOrigin(b.width/2,b.height/2);
+>>>>>>> 28ece76b321902082f09f974b70b20f07fab9ab4
 	
 	//Suavizado del sprite
 	t_de_sprite.setSmooth(true);
 }
 
+<<<<<<< HEAD
+=======
+Bloque_Sprite::Bloque_Sprite(std::string nombre_textura, int i) {
+	
+	fuente.loadFromFile("Fuentes/Triforce.ttf");
+	t_de_sprite.loadFromFile(nombre_textura);
+	s_sprite.setTexture(t_de_sprite);
+	
+	this->texto.setString(std::to_string(i));
+	this->texto.setFont(fuente);
+	FloatRect a = this->texto.getLocalBounds();
+	this->texto.setOrigin(a.width/2,a.height/2);
+	
+	FloatRect b = s_sprite.getLocalBounds();
+	s_sprite.setOrigin(b.width/2,b.height/2);
+	
+	t_de_sprite.setSmooth(true);
+}
+
+void Bloque_Sprite::setBloque_Sprite(std::string nombre_textura, int i){
+	
+	fuente.loadFromFile("Fuentes/Triforce.ttf");
+	t_de_sprite.loadFromFile(nombre_textura);
+	s_sprite.setTexture(t_de_sprite);
+	
+	this->texto.setString(std::to_string(i));
+	this->texto.setFont(fuente);
+	FloatRect a = this->texto.getLocalBounds();
+	this->texto.setOrigin(a.width/2,a.height/2);
+	
+	FloatRect b = s_sprite.getLocalBounds();
+	s_sprite.setOrigin(b.width/2,b.height/2);
+	
+	t_de_sprite.setSmooth(true);
+}
+
+void Bloque_Sprite::cambiar_texto(int i){
+	this->texto.setString(std::to_string(i));
+	FloatRect a = this->texto.getLocalBounds();
+	this->texto.setOrigin(a.width/2,a.height/2);
+}
+
+void Bloque_Sprite::cambiar_texto(std::string nuevo_texto){
+	this->texto.setString(nuevo_texto);
+	FloatRect a = this->texto.getLocalBounds();
+	this->texto.setOrigin(a.width/2,a.height/2);
+}
+
+>>>>>>> 28ece76b321902082f09f974b70b20f07fab9ab4
 void Bloque_Sprite::cambiar_posicion_texto (const float & x, const float & y){
 	texto.setPosition(x,y);
 }
@@ -77,5 +138,6 @@ void Bloque_Sprite::Dibujar (RenderWindow & ventana) {
 	this->Dibujar_bloque(ventana);
 	this->Dibujar_texto(ventana);
 }
+
 
 

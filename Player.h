@@ -6,20 +6,49 @@
 #include "Objeto.h"
 #include "Lista_de_objetos.h"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Clock.hpp>
+#include "Elementos.h"
+#include "Juego.h"
+#include "Sprites.h"
 using namespace std;
 
-class Player : public Stats, public Lista_de_objetos{
+enum ESTADOS_ANIMACION_JUGADOR{QUIETO = 0, ATACANDO};
+
+class Player : public Stats, public Lista_de_objetos, public Sprites{
+	//Inicializacion
+	void inicVariables();
+	void inicTextura();
+	void inicSprite();
+	void inicAnimacion();
+	
+	//Animacion
+	unsigned short animEstado;
+	IntRect cuadroActual;
+	Clock relojAnimacion;
+	
+	//Variables
 	int nivel, exp, umbral_exp, monedas;
-	list<Objeto> Inventario;
+	list<Objeto> Inventario_Jugador;
 public:
 	Player();
-	void SetMonedas(int cantMonedas);
-	void SumarMonedas(int cantMonedas);
+	Player(Elementos_jugador &aux);
+	virtual ~Player();
+	
+	//Getters
+	const int getNivel();
+	const int GetMonedas();
+	const list<Objeto> getInventario();
+	
+	//Setters
 	void setNivel(int x);
-	int getNivel();
-	int GetMonedas();
-	list<Objeto> Obtener_Inventario();
+	void SetMonedas(int cantMonedas);
 	void Set_Inventario( list<Objeto> nuevo_inventario );
+	
+	//Funciones
+	void SumarMonedas(int cantMonedas);
+	void actualizarMovimiento(char estado);
+	void Actualizar(char estado);
+	void Dibujar (RenderWindow & ventana);
 };
 
 #endif

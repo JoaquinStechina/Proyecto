@@ -101,4 +101,3 @@ Lista_de_objetos::Lista_de_objetos() {
 	amuleto_int3.setNombre(nombrecito);
 	objetos_del_juego.push_back(amuleto_int3);
 }
-

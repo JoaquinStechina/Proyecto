@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-Menu_Tienda::Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int pos_selector) : fondo_menu_principal("Imagenes/Fondos/fondo2_1.png"), Opcion1("Opcion Uno",25), Opcion2("Opcion Dos",25), Opcion3("Opcion Tres",25), precio1("0",30), precio2("0",30), precio3("0",30), monedas("0",30) {	
+Menu_Tienda::Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int pos_selector, Lista_de_objetos listita) : fondo_menu_principal("Imagenes/Fondos/fondo2_1.png"), Opcion1("Opcion Uno",25), Opcion2("Opcion Dos",25), Opcion3("Opcion Tres",25), precio1("0",30), precio2("0",30), precio3("0",30), monedas("0",30) {	
 	//Configuracion de sonido y reloj
 	sb_buffer.loadFromFile("Sonidos/Menu_select.wav");
 	s_sonido_enter.setBuffer(sb_buffer);
@@ -14,7 +14,7 @@ Menu_Tienda::Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int
 	v_de_filas = vector_filas;
 	p_del_selector = pos_selector;
 	personaje_aux = Jugador;
-	inv_aux = Jugador.Obtener_Inventario();
+	inv_aux = Jugador.getInventario();
 	
 	//Creo la lista de objetos que estan a la venta
 	int objeto1, objeto2, objeto3, contadorcito;
@@ -23,7 +23,7 @@ Menu_Tienda::Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int
 	objeto3 = rand()%12+4;
 	while ( objeto2 == objeto1 ){objeto2 = rand()%12+3;}
 	while ( objeto3 == objeto1 or objeto3 == objeto2 ){objeto3 = rand()%12+3;}
-	for (Objeto &x : objetos_del_juego){
+	for (Objeto &x : listita.objetos_del_juego){
 		contadorcito++;
 		if (contadorcito == objeto1){stock.push_back(x);}
 		if (contadorcito == objeto2){stock.push_back(x);}
@@ -69,6 +69,9 @@ Menu_Tienda::Menu_Tienda(Player &Jugador, list<Filas_De_Nodos> vector_filas, int
 	monedas.Cambiar_Pos_Opcion_mapa(1125,540);
 	monedas.Cambiar_texto(to_string(Jugador.GetMonedas()));
 	monedas.Cambiar_color_fuente(Color(255,200,60));
+	
+	if(!stock.empty()){cout<<"Stock lleno!!"<<endl;}
+	else{cout<<"Stock vacio!!"<<endl;}
 }
 
 

@@ -8,7 +8,7 @@
 #include "Menu_Tienda.h"
 using namespace std;
 
-Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30), inventario("inventario", 30){
+Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30), inventario("inventario", 30),guardar_partida("Guardar Partida",30){
 	
 	personaje = m_Personaje;
 	
@@ -112,6 +112,12 @@ Menu_mapa::Menu_mapa(Player &m_Personaje) : Fondo_juego("Imagenes/Fondos/fondo.j
 	inventario.Cambiar_Pos_Opcion_Menu(1000,40);
 	inventario.Cambiar_Pos_Cuadro_Menu(1000,50);
 	
+	//Boton guardar partida;
+	guardar_partida.Cambiar_Pos_Opcion_Menu(200,540);
+	guardar_partida.Cambiar_Pos_Cuadro_Menu(200,550);
+	
+	if(asdf.objetos_del_juego.empty()){cout<<"Stock vacio!!"<<endl;}
+	else{cout<<"Stock lleno!!"<<endl;}
 }
 
 void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
@@ -119,12 +125,20 @@ void Menu_mapa::Actualizar (RenderWindow & ventana, Juego & j) {
 		j.Cambiar_Escena(new Menu_Principal);
 		s_sonido_enter.play();
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Space)){
+		j.Cambiar_Escena(new Escena_batalla(personaje));
+		s_sonido_enter.play();
+	}
 	if (Keyboard::isKeyPressed(Keyboard::I)){
 		j.Cambiar_Escena(new Menu_Inventario(personaje, V_Filas, columna_actual_flecha));
 		s_sonido_enter.play();
 	}
 	if (Keyboard::isKeyPressed(Keyboard::T)){
-		j.Cambiar_Escena(new Menu_Tienda(personaje, V_Filas, columna_actual_flecha));
+		j.Cambiar_Escena(new Menu_Tienda(personaje, V_Filas, columna_actual_flecha, asdf));
+		s_sonido_enter.play();
+	}
+	if(Keyboard::isKeyPressed(Keyboard::G)){
+		guardado a(personaje,V_Filas,columna_actual_flecha);
 		s_sonido_enter.play();
 	}
 	selec_mapa.Actualizar(ventana, V_Filas,columna_actual_flecha);
@@ -146,10 +160,11 @@ void Menu_mapa::Dibujar (RenderWindow & ventana) {
 	ventana.draw(s_moneda_icon);
 	monedas.Dibujar(ventana);
 	inventario.Dibujar(ventana);
+	guardar_partida.Dibujar(ventana);
 }
 
 
-Menu_mapa::Menu_mapa (Player & Personaje, list<Filas_De_Nodos> vector_de_filas, int columna_actual) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30), inventario("inventario", 30) {
+Menu_mapa::Menu_mapa (Player & Personaje, list<Filas_De_Nodos> vector_de_filas, int columna_actual) : Fondo_juego("Imagenes/Fondos/fondo.jpg"), titulo("Piso 1", 40), monedas("0",30), inventario("inventario", 30),guardar_partida("Guardar Partida",30) {
 	personaje = Personaje;
 	
 	//Hago un fondo gris para el mapa;
@@ -236,5 +251,12 @@ Menu_mapa::Menu_mapa (Player & Personaje, list<Filas_De_Nodos> vector_de_filas, 
 	//Inventario;
 	inventario.Cambiar_Pos_Opcion_Menu(1000,40);
 	inventario.Cambiar_Pos_Cuadro_Menu(1000,50);
+	
+	//Boton guardar partida;
+	guardar_partida.Cambiar_Pos_Opcion_Menu(200,540);
+	guardar_partida.Cambiar_Pos_Cuadro_Menu(200,550);
+	
+	if(asdf.objetos_del_juego.empty()){cout<<"Stock vacio!!"<<endl;}
+	else{cout<<"Stock lleno!!"<<endl;}
 }
 

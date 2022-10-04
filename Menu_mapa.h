@@ -10,6 +10,10 @@
 #include "Opcion_de_menu.h"
 #include "Player.h"
 #include "Opcion_de_mapa.h"
+#include "guardado.h"
+#include "Lista_de_objetos.h"
+#include "Escena_batalla.h"
+
 using namespace std;
 
 class Menu_mapa : public Escena {
@@ -18,10 +22,14 @@ class Menu_mapa : public Escena {
 	Sprite s_empty_bar, s_hp_bar, s_mana_bar, s_bar_lvl, s_moneda_icon;
 	Opcion_de_mapa monedas;
 	Opcion_de_menu titulo, inventario;
+	Opcion_de_menu guardar_partida;
 	
 	//Sonidos
 	SoundBuffer sb_buffer_enter;
 	Sound s_sonido_enter;
+	
+	//Lista de objetos
+	Lista_de_objetos asdf;
 	
 	//Fondo
 	RectangleShape Fondo_Base;
@@ -42,6 +50,7 @@ class Menu_mapa : public Escena {
 	
 	//Personaje;
 	Player personaje;
+	
 public:
 	Menu_mapa(Player &Personaje);
 	Menu_mapa(Player &Personaje, list<Filas_De_Nodos> vector_de_filas, int columna_actual);
