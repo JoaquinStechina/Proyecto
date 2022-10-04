@@ -20,7 +20,7 @@ class Menu_Nueva_Partida : public Escena {
 	int cont_pos;
 	Fondo fondo;
 	Clock reloj;
-	Opcion_de_menu opc1;
+	Opcion_de_menu arreglo[6];
 public:
 	Menu_Nueva_Partida();
 	void Actualizar (RenderWindow & ventana, Juego & j);

@@ -13,6 +13,7 @@ class Opcion_de_menu : public Sprites {
 	Font fuente;
 	FloatRect rect_texto_opcion_menu;
 public:
+	Opcion_de_menu();
 	Opcion_de_menu(std::string t_de_menu, int Tamanio_texto);
 	void Cambiar_Pos_Opcion_Menu(const Vector2f v);
 	void Cambiar_Pos_Opcion_Menu(const float posx, const float posy);

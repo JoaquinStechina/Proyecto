@@ -1,16 +1,55 @@
 #include "Bloque_Sprite.h"
 
+Bloque_Sprite::Bloque_Sprite(){}
+
 Bloque_Sprite::Bloque_Sprite(std::string nombre_textura) {
+	//Carga de la textura para posteriormente utilizarla en el sprite
 	t_de_sprite.loadFromFile(nombre_textura);
-	t_de_sprite.setSmooth(true);
 	s_sprite.setTexture(t_de_sprite);
+	
+	//Inicializo variable "a" y le asigno las dimensiones de s_sprite
+	//Se podria usar ".getSize()" pero este devuelve unsigned int
+	//y habria que pasarlo a float
+	FloatRect a = s_sprite.getLocalBounds();
+	
+	//Para settear el origen es necesario pasarle float
+	s_sprite.setOrigin(a.height/2,a.width/2);
+	
+	//Suavizado del sprite
+	t_de_sprite.setSmooth(true);
 }
-//Bloque_Sprite(std::string nombre_textura, FloatRect bloque, FloatRect bloque_texto, std::string texto) {
-//	
-//}
+
+Bloque_Sprite::Bloque_Sprite(std::string nombre_textura, std::string texto) {
+	//Cargado
+	fuente.loadFromFile("Fuentes/Triforce.ttf");
+	t_de_sprite.loadFromFile(nombre_textura);
+	s_sprite.setTexture(t_de_sprite);
+	
+	//Se settea el texto y la fuente del mismo para luego obtener
+	//las dimensiones de su bloque y definir su origen en el centro del mismo
+	this->texto.setString(texto);
+	this->texto.setFont(fuente);
+	FloatRect a = this->texto.getLocalBounds();
+	this->texto.setOrigin(a.height/2,a.width/2);
+	
+	//Centrado del origen del sprite
+	FloatRect b = s_sprite.getLocalBounds();
+	s_sprite.setOrigin(b.height/2,b.width/2);
+	
+	//Suavizado del sprite
+	t_de_sprite.setSmooth(true);
+}
+
+void Bloque_Sprite::cambiar_posicion_texto (const float & x, const float & y){
+	texto.setPosition(x,y);
+}
 
 void Bloque_Sprite::cambiar_posicion_bloque (const float & x, const float & y) {
 	s_sprite.setPosition(x,y);
+}
+
+void Bloque_Sprite::cambiar_escala_texto (const float & x, const float & y){
+	texto.setScale(x,y);
 }
 
 void Bloque_Sprite::cambiar_escala_bloque (const float & x) {

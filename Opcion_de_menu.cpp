@@ -1,6 +1,8 @@
 #include "Opcion_de_menu.h"
 #include <SFML/System/Vector2.hpp>
 
+Opcion_de_menu::Opcion_de_menu(){}
+
 Opcion_de_menu::Opcion_de_menu(std::string t_de_menu, int Tamanio_texto) {
 	fuente.loadFromFile("Fuentes/Triforce.ttf");
 	Texto_opcion_menu.setString(t_de_menu);

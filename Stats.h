@@ -9,8 +9,8 @@ struct Stats_Storage{
 	float Destreza;
 	float Inteligencia;
 	float Suerte;
-	float Vida;
-	float Mana;
+	float Vida_Max;
+	float Mana_Max;
 	float Vida_actual;
 	float Mana_actual;
 };
